@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MenuBar type="MenuBar">
+	<Menu type="Menu">
+		<Name type="String">File</Name>
+		<Menu type="Menu">
+			<Name type="String">New</Name>
+			<Item type="MenuItem">
+				<ActionName type="String">NewProjectAction</ActionName>
+			</Item>
+			<Item type="MenuItem">
+				<ActionName type="String">NewFileAction</ActionName>
+			</Item>
+			<Item type="MenuItem">
+				<ActionName type="String">ImportFileAction</ActionName>
+			</Item>
+		</Menu>
+		<Item type="MenuItem">
+			<ActionName type="String">OpenProjectAction</ActionName>
+		</Item>
+		<Item type="MenuItem">
+			<ActionName type="String">SaveProjectAction</ActionName>
+		</Item>
+		<Item type="MenuItem">
+			<ActionName type="String">CloseProjectAction</ActionName>
+		</Item>
+		<Separator />
+		<Item type="MenuItem">
+			<ActionName type="String">OpenVCDFileAction</ActionName>
+		</Item>
+		<Separator />
+		<Item type="MenuItem">
+			<ActionName type="String">SaveFileAction</ActionName>
+		</Item>
+		<Item type="MenuItem">
+			<ActionName type="String">RemoveFileAction</ActionName>
+		</Item>
+		<Separator />
+		<Item type="MenuItem">
+			<ActionName type="String">SetAsTopLevelEntityAction</ActionName>
+		</Item>
+		<Item type="MenuItem">
+			<ActionName type="String">RenameAction</ActionName>
+		</Item>
+		<Separator />
+		<Item type="MenuItem">
+			<ActionName type="String">ShowProjectPropertiesAction</ActionName>
+		</Item>
+		<Separator />
+		<Item type="MenuItem">
+			<ActionName type="String">ExitAction</ActionName>
+		</Item>
+	</Menu>
+	<Menu type="Menu">
+		<Name type="String">Edit</Name>
+		<Item type="MenuItem">
+			<ActionName type="String">UndoAction</ActionName>
+		</Item>
+		<Item type="MenuItem">
+			<ActionName type="String">RedoAction</ActionName>
+		</Item>
+		<Separator />
+		<Item type="MenuItem">
+			<ActionName type="String">CutAction</ActionName>
+		</Item>
+		<Item type="MenuItem">
+			<ActionName type="String">CopyAction</ActionName>
+		</Item>
+		<Item type="MenuItem">
+			<ActionName type="String">PasteAction</ActionName>
+		</Item>
+		<Separator />
+		<Item type="MenuItem">
+			<ActionName type="String">DeleteAction</ActionName>
+		</Item>
+		<Item type="MenuItem">
+			<ActionName type="String">SelectAllAction</ActionName>
+		</Item>
+		<Item type="MenuItem">
+			<ActionName type="String">SearchReplaceAction</ActionName>
+		</Item>
+		<Separator />
+		<Item type="CheckBoxMenuItem">
+			<ActionName type="String">WordWrapAction</ActionName>
+		</Item>
+		<Separator />
+		<Item type="MenuItem">
+			<ActionName type="String">ShowCompletionAction</ActionName>
+		</Item>
+		<Item type="MenuItem">
+			<ActionName type="String">WordCompletionAction</ActionName>
+		</Item>
+		<Item type="MenuItem">
+			<ActionName type="String">ToggleCommentAction</ActionName>
+		</Item>
+		<Separator />
+		<Item type="MenuItem">
+			<ActionName type="String">ShowSettingsAction</ActionName>
+		</Item>
+	</Menu>
+	<Menu type="Menu">
+		<Name type="String">Simulation</Name>
+		<Item type="MenuItem">
+			<ActionName type="String">CompileFileAction</ActionName>
+		</Item>
+		<Item type="MenuItem">
+			<ActionName type="String">CompileSelectedFilesAction</ActionName>
+		</Item>
+		<Item type="MenuItem">
+			<ActionName type="String">CompileAllFilesAction</ActionName>
+		</Item>
+		<Separator />
+		<Item type="MenuItem">
+			<ActionName type="String">CompileSimulateShowFileAction</ActionName>
+		</Item>
+		<Item type="MenuItem">
+			<ActionName type="String">SimulateFileAction</ActionName>
+		</Item>
+		<Item type="MenuItem">
+			<ActionName type="String">StopSimulationAction</ActionName>
+		</Item>
+		<Item type="MenuItem">
+			<ActionName type="String">ShowVCDFileAction</ActionName>
+		</Item>
+	</Menu>
+	<Menu type="Menu">
+		<Name type="String">View</Name>
+		<Item type="MenuItem">
+			<ActionName type="String">ShowSignalAction</ActionName>
+		</Item>
+		<Item type="MenuItem">
+			<ActionName type="String">RemoveSignalAction</ActionName>
+		</Item>
+		<Separator />
+		<Item type="MenuItem">
+			<ActionName type="String">CreateMarkerAction</ActionName>
+		</Item>
+		<Item type="MenuItem">
+			<ActionName type="String">RemoveMarkerAction</ActionName>
+		</Item>
+		<Item type="MenuItem">
+			<ActionName type="String">ScrollToMarkerAction</ActionName>
+		</Item>
+		<Separator />
+		<Item type="MenuItem">
+			<ActionName type="String">IncreaseZoomAction</ActionName>
+		</Item>
+		<Item type="MenuItem">
+			<ActionName type="String">DecreaseZoomAction</ActionName>
+		</Item>
+		<Item type="MenuItem">
+			<ActionName type="String">NormalZoomAction</ActionName>
+		</Item>
+		<Item type="MenuItem">
+			<ActionName type="String">MinimalZoomAction</ActionName>
+		</Item>
+		<Separator/>
+		<Item type="MenuItem">
+			<ActionName type="String">ExportToSVGAction</ActionName>
+		</Item>
+	</Menu>
+	<Menu type="Menu">
+		<Name type="String">Window</Name>
+		<Item type="CheckBoxMenuItem">
+			<ActionName type="String">ShowProjectViewAction</ActionName>
+		</Item>
+		<Item type="CheckBoxMenuItem">
+			<ActionName type="String">ShowConsoleViewAction</ActionName>
+		</Item>
+		<Item type="CheckBoxMenuItem">
+			<ActionName type="String">ShowWaveViewAction</ActionName>
+		</Item>
+		<Item type="CheckBoxMenuItem">
+			<ActionName type="String">ShowSignalTreeViewAction</ActionName>
+		</Item>
+		<Item type="CheckBoxMenuItem">
+			<ActionName type="String">ShowMarkerViewAction</ActionName>
+		</Item>
+	</Menu>
+</MenuBar> 

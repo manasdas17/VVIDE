@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- VHDL Specs 
+/*
+ * This file is part of the VVIDE project.
+ * 
+ * Copyright (C) 2011 Pavel Fischer rubbiroid@gmail.com
+ * 
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
+ */
+-->
+
+<api language="VHDL">
+	<environment paramStartChar="(" paramEndChar=")"
+		paramSeparator=", " terminal=";" />
+	<keywords>
+		<keyword name="alias" type="other">
+			<desc><![CDATA[<b>alias</b> ID : TYPE:ID <b>is</b> OBJECT_ID;]]></desc>
+		</keyword>
+		<keyword name="architecture" type="other">
+			<desc><![CDATA[<b>architecture</b> ARCH_ID <b>of</b> ENTITY_ID <b>is</b><br/>
+				&#9;[{declatation}]<br/>
+				<b>begin</b><br/>
+				&#9;[{parallel statement}]<br>
+				<b>end</b> [<b>architecture</b>] ARCH_ID;]]></desc>
+		</keyword>
+		<keyword name="after" type="other"></keyword>
+		<keyword name="assert" type="other">
+			<desc><![CDATA[<b>assert</b> expr [report expr];]]></desc>
+		</keyword>
+		<keyword name="begin" type="other"></keyword>
+		<keyword name="case" type="other">
+			<desc><![CDATA[[LABEL:] <b>case</b> expr <b>is</b><br/>
+			{<b>when</b> choise [{<b>|</b> choise}] <b>=&gt;</b><br/>
+			&#9;{sequential statement}}<br/>
+			<b>end case</b> [LABEL];]]></desc>
+		</keyword>
+		<keyword name="component" type="other">
+			<desc><![CDATA[<b>component</b> COMPONENT_ID [<b>is</b>]<br/>
+				&#9;[<b>generic (</b>{ID: TYPE_ID [<b>:=</b>expr];}<b>)</b>;]<br/>
+				&#9;[<b>port</b> (</b>{ID: <b>in | out | inout</b> TYPE_ID [<b>:=</b>expr];}<b>)</b>;]<br/>
+				<b>end component</b> [COMPONENT_ID];]]></desc>
+		</keyword>
+		<keyword name="configuration" type="other">
+			<desc><![CDATA[<b>configuration</b> CONFIG_ID <b>of</b> ENTITY_ID <b>is</b><br/>
+				&#9;<b>for</b> ARCH_ID<br/>
+				&#9;[{block configuration | component configuration}]<br/>
+				<b>end for;</b><br/>
+				<b>end</b> [<b>configuration</b>] CONFIG_ID;]]></desc>
+		</keyword>
+		<keyword name="constant" type="other">
+			<desc><![CDATA[<b>constant</b> ID : TYPE_ID <b>:=</b> expr;]]></desc>
+		</keyword>
+		<keyword name="downto" type="other"></keyword>
+		<keyword name="end" type="other"></keyword>
+		<keyword name="else" type="other"></keyword>
+		<keyword name="elsif" type="other"></keyword>
+		<keyword name="entity" type="other">
+			<desc><![CDATA[<b>entity</b> ENTITY_ID <b>is</b><br/>
+				&#9;[<b>generic (</b>{ID: TYPE_ID [<b>:=</b>expr];}<b>)</b>;]<br/>
+				&#9;[<b>port</b> (</b>{ID: <b>in | out | inout</b> TYPE_ID [<b>:=</b>expr];}<b>)</b>;]<br/>
+				&#9;[{declatation}]<br/>
+				[<b>begin</b><br/>
+				&#9;{parallel statement}]<br>
+				<b>end</b> [<b>entity</b>] ENTITY_ID;]]></desc>
+		</keyword>
+		<keyword name="error" type="other"></keyword>
+		<keyword name="file" type="other">
+			<desc><![CDATA[<b>file</b> ID : TYPE_ID <b>is in | out</b> string;]]></desc>
+		</keyword>
+		<keyword name="for" type="other">
+		<desc><![CDATA[[LABEL:] <b>for</b> ID <b>in</b> range <b>loop</b><br/>
+			&#9;{sequential statement}}<br/>
+			<b>end loop</b> [LABEL];]]></desc>
+		</keyword>
+		<keyword name="function" type="other">
+			<desc><![CDATA[[<b>impure</b>] <b>function</b> FUNCTION_ID<br/>
+				&#9;[<b>(</b> {[<b>constant | variable | signal</b>] ID : <b>in | out | inout</b> TYPE_ID [<b>:=</b>expr];}<b>)</b>]<br/>
+				&#9;<b>return</b> TYPE_ID <b>[is</b><br/>
+				<b>begin</b><br/>
+				&#9;{sequential statement}]<br>
+				<b>end</b> [<b>function</b>] FUNCTION_ID];]]></desc>
+		</keyword>
+		<keyword name="procedure" type="other">
+			<desc><![CDATA[<b>procedure</b> PROCEDURE_ID<br/>
+				&#9;[<b>(</b>{[<b>constant | variable | signal</b>] ID : <b>in | out | inout</b> TYPE_ID [<b>:=</b>expr];}<b>)</b>]<br/>
+				<b>[is begin</b><br/>
+				&#9;[{sequential statement}]<br>
+				<b>end</b> [<b>procedure</b>] PROCEDURE_ID];]]></desc>
+		</keyword>
+		<keyword name="generic" type="other"></keyword>
+		<keyword name="if" type="other">
+			<desc><![CDATA[[LABEL:] <b>if</b> expr <b>then</b><br/>
+				&#9;[{sequential statement}]<br>
+				[{<b>elsif</b> expr <b>then</b><br/>
+				&#9;[{sequential statement}}]<br>
+				[<b>else</b<br/>
+				&#9;{sequential statement}]<br>
+				<b>end if</b> [LABEL];]]></desc>
+		</keyword>
+		<keyword name="in" type="other"></keyword>
+		<keyword name="is" type="other"></keyword>
+		<keyword name="library" type="other">
+			<desc><![CDATA[<b>library</b> ID;]]></desc>
+		</keyword>
+		<keyword name="loop" type="other"></keyword>
+		<keyword name="map" type="other"></keyword>
+		<keyword name="note" type="other"></keyword>
+		<keyword name="of" type="other"></keyword>
+		<keyword name="others" type="other"></keyword>
+		<keyword name="out" type="other"></keyword>
+		<keyword name="package" type="other">
+			<desc><![CDATA[<b>package</b> PACKAGE_ID <b>is</b><br/>
+				&#9;[{declatation}]<br/>
+				<b>end</b> [<b>package</b>] PACKAGE_ID;]]></desc>
+		</keyword>
+		<keyword name="port" type="other"></keyword>
+		<keyword name="process" type="other">
+			<desc><![CDATA[[LABEL:] [<b>postponed</b>] <b>process</b> [<b>(</b> {SIGNAL_ID, } <b>)</b>]<br/>
+			&#9;[{declaration}]<br/>
+			<b>begin</b><br/>
+			&#9;[{sequential statement}]<br/>
+			<b>end</b> [<b>postponed</b>] <b>process</b> [LABEL];]]></desc>
+		</keyword>
+		<keyword name="range" type="other">
+			<desc><![CDATA[<b>range</b> number <b>downto | to</b> number]]></desc>
+		</keyword>
+		<keyword name="report" type="other">
+			<desc><![CDATA[<b>report</b> string [<b>severity note | warning | error | failure</b>];]]></desc>
+		</keyword>
+		<keyword name="return" type="other"></keyword>
+		<keyword name="select" type="other"></keyword>
+		<keyword name="severity" type="other"></keyword>
+		<keyword name="shared" type="other"></keyword>
+		<keyword name="signal" type="other">
+			<desc><![CDATA[<b>signal</b> ID : TYPE_ID [<b>:=</b> expr];]]></desc>
+		</keyword>
+		<keyword name="subtype" type="other">
+			<desc><![CDATA[<b>subtype</b> ID <b>is</b> SCALAR_TYPE_ID <b>range</b> range;<br/>
+			<b>subtype</b> ID <b>is</b> ARRAY_TYPE_ID<b>(</b> {range,}<b>)</b>;]]></desc>
+		</keyword>
+		<keyword name="then" type="other"></keyword>
+		<keyword name="to" type="other"></keyword>
+		<keyword name="type" type="other">
+			<desc><![CDATA[<b>type</b> ID <b>is(</b> {ID,} <b>);</b>]]></desc>
+		</keyword>
+		<keyword name="use" type="other">
+			<desc><![CDATA[<b>use</b> LIBRARY_ID.PACKAGE_ID.<b>all</b>;]]></desc>
+		</keyword>
+		<keyword name="variable" type="other">
+			<desc><![CDATA[[<b>shared</b>] <b>variable</b> ID : TYPE_ID [<b>:=</b> expr];]]></desc>
+		</keyword>
+		<keyword name="wait" type="other">
+			<desc><![CDATA[<b>wait</b> [<b>on</b> {SIGNAL_ID,}] [<b>until</b> expr] [<b>for</b> time];]]></desc>
+		</keyword>
+		<keyword name="warning" type="other"></keyword>
+		<keyword name="when" type="other"></keyword>
+		<keyword name="while" type="other">
+			<desc><![CDATA[[LABEL:] [<b>while</b> expr] <b>loop</b><br/>
+				&#9;{sequential statement}}<br/>
+				<b>end loop</b> [LABEL];]]></desc>
+		</keyword>
+		<keyword name="with" type="other">
+			<desc><![CDATA[[LABEL:] [<b>postponed</b>] <b>with</b> expr <b>select</b><br/>
+				&#9;SIGNAL_ID <b>&lt;=</b> [<b>transport</b>] | [<b>reject</b> TIME <b>internal</b>] 
+				&#9;{{expr [<b>after</b> time]} | <b>unaffected when</b> choice [{<b>|</b> choice}]};]]></desc>
+		</keyword>
+		<keyword name="access" type="other">
+			<desc><![CDATA[<b>access</b> TYPE_ID]]></desc>
+		</keyword>
+		<keyword name="array" type="other">
+			<desc><![CDATA[<b>array (</b> {range | TYPE_ID,}<b>) of</b> TYPE_ID | SUBTYPE_ID;]]></desc>
+		</keyword>
+		<keyword name="integer" type="other"></keyword>
+		<keyword name="null" type="other"></keyword>
+		<keyword name="record" type="other">
+			<desc><![CDATA[<b>record</b><br/>
+			&#9;{ID : TYPE_ID;}<br/>
+			<b>end record;</b>]]></desc>
+		</keyword>
+		<keyword name="std_logic" type="other"></keyword>
+		<keyword name="std_logic_vector" type="other"></keyword>
+		<keyword name="'active" type="other">
+			<desc><![CDATA[TYPE_ID<b>'active</b><br/>Activity on signal]]></desc>
+		</keyword>
+		<keyword name="'event" type="other">
+			<desc><![CDATA[TYPE_ID<b>'event</b><br/>Event on signal]]></desc>
+		</keyword>
+		<keyword name="'left" type="other">
+			<desc><![CDATA[TYPE_ID<b>'left</b><br/>Left-bound value]]></desc>
+		</keyword>
+		<keyword name="'low" type="other">
+			<desc><![CDATA[TYPE_ID<b>'low</b><br/>Lower-bound value]]></desc>
+		</keyword>
+		<keyword name="'high" type="other">
+			<desc><![CDATA[TYPE_ID<b>'high</b><br/>Upper-bound value]]></desc>
+		</keyword>
+		<keyword name="'right" type="other">
+			<desc><![CDATA[TYPE_ID<b>'right</b><br/>Rigth boud value]]></desc>
+		</keyword>
+		<keyword name="signed" type="function" definedIn="ieee.std_logic_1164">
+			<params>
+				<param type="std_logic_vector" name="vector" />
+			</params>
+			<desc>Convert Vector to signed vector</desc>
+		</keyword>
+		<keyword name="to_integer" type="function" definedIn="ieee.std_logic_1164">
+			<params>
+				<param type="std_logic_vector" name="vector" />
+			</params>
+			<desc>Convert Vector to signed vector</desc>
+		</keyword>
+		<keyword name="unsigned" type="function" definedIn="ieee.std_logic_1164">
+			<params>
+				<param type="std_logic_vector" name="vector" />
+			</params>
+			<desc>Convert Vector to unsigned vector</desc>
+		</keyword>
+	</keywords>
+</api>

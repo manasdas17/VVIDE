@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SupportedFiles type="HashMap">
+	<Item type="KeyValueInfo">
+		<Key type="String">Text File</Key>
+		<Value type="Class">vvide.project.files.TextFile</Value>
+	</Item>
+	<Item type="KeyValueInfo">
+		<Key type="String">Verilog File</Key>
+		<Value type="Class">vvide.project.files.VerilogFile</Value>
+	</Item>
+	<Item type="KeyValueInfo">
+		<Key type="String">VHDL File</Key>
+		<Value type="Class">vvide.project.files.VHDLFile</Value>
+	</Item>
+</SupportedFiles>

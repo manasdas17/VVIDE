@@ -1,0 +1,7 @@
+VVIDE is a simple VHDL/Verilog IDE
+
+For the compiling and simulation it uses one of the following external programs (must be installed separately):
+
+- GHDL (http://ghdl.free.fr/)
+- Icarus Verilog (http://iverilog.icarus.com/)
+- Mentor Graphics ModelSim (http://model.com/)

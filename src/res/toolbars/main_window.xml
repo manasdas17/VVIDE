@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Buttons type="Toolbar">
+	<ToolbarButton type="ToolbarButton">
+		<ActionName type="String">NewProjectAction</ActionName>
+	</ToolbarButton>
+	<ToolbarButton type="ToolbarButton">
+		<ActionName type="String">OpenProjectAction</ActionName>
+	</ToolbarButton>
+	<ToolbarButton type="ToolbarButton">
+		<ActionName type="String">NewFileAction</ActionName>
+	</ToolbarButton>
+	<ToolbarButton type="ToolbarButton">
+		<ActionName type="String">ImportFileAction</ActionName>
+	</ToolbarButton>
+	<ToolbarButton type="ToolbarButton">
+		<ActionName type="String">SaveProjectAction</ActionName>
+	</ToolbarButton>
+	<ToolbarButton type="ToolbarButton">
+		<ActionName type="String">SaveFileAction</ActionName>
+	</ToolbarButton>
+	<Separator/>
+	<ToolbarButton type="ToolbarButton">
+		<ActionName type="String">CompileAllFilesAction</ActionName>
+	</ToolbarButton>
+	<ToolbarButton type="ToolbarButton">
+		<ActionName type="String">CompileSimulateShowFileAction</ActionName>
+	</ToolbarButton>
+	<ToolbarTextBox type="ToolbarTextBox">
+		<Width type="Integer">75</Width>
+	</ToolbarTextBox>
+	<ToolbarButton type="ToolbarButton">
+		<ActionName type="String">SimulateFileAction</ActionName>
+	</ToolbarButton>
+	<ToolbarButton type="ToolbarButton">
+		<ActionName type="String">StopSimulationAction</ActionName>
+	</ToolbarButton>
+	<ToolbarButton type="ToolbarButton">
+		<ActionName type="String">ShowVCDFileAction</ActionName>
+	</ToolbarButton>
+</Buttons>

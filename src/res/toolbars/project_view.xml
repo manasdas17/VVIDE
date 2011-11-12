@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Buttons type="Toolbar">
+	<ToolbarButton type="ToolbarButton">
+		<ActionName type="String">NewFileAction</ActionName>
+	</ToolbarButton>
+	<ToolbarButton type="ToolbarButton">
+		<ActionName type="String">ImportFileAction</ActionName>
+	</ToolbarButton>
+	<Separator/>
+	<ToolbarButton type="ToolbarButton">
+		<ActionName type="String">RemoveFileAction</ActionName>
+	</ToolbarButton>
+	<Separator/>
+	<ToolbarButton type="ToolbarButton">
+		<ActionName type="String">EditFileAction</ActionName>
+	</ToolbarButton>
+	<Separator/>	<ToolbarButton type="ToolbarButton">
+		<ActionName type="String">CompileFileAction</ActionName>
+	</ToolbarButton>
+	<ToolbarButton type="ToolbarButton">
+		<ActionName type="String">CompileAllFilesAction</ActionName>
+	</ToolbarButton>
+</Buttons>

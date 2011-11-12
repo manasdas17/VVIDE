@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Buttons type="Toolbar">
+	<ToolbarButton type="ToolbarButton">
+		<ActionName type="String">DecreaseZoomAction</ActionName>
+	</ToolbarButton>
+	<ToolbarButton type="ToolbarButton">
+		<ActionName type="String">NormalZoomAction</ActionName>
+	</ToolbarButton>
+	<ToolbarButton type="ToolbarButton">
+		<ActionName type="String">IncreaseZoomAction</ActionName>
+	</ToolbarButton>
+	<ToolbarButton type="ToolbarButton">
+		<ActionName type="String">MinimalZoomAction</ActionName>
+	</ToolbarButton>
+	<Separator/>
+	<ToolbarButton type="ToolbarButton">
+		<ActionName type="String">MoveSignalUpAction</ActionName>
+	</ToolbarButton>
+	<ToolbarButton type="ToolbarButton">
+		<ActionName type="String">MoveSignalDownAction</ActionName>
+	</ToolbarButton>
+	<Separator/>
+	<ToolbarButton type="ToolbarButton">
+		<ActionName type="String">MoveMarkerPreviousChangeAction</ActionName>
+	</ToolbarButton>
+	<ToolbarButton type="ToolbarButton">
+		<ActionName type="String">MoveMarkerNextChangeAction</ActionName>
+	</ToolbarButton>
+</Buttons>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Simulators type="List">
+	<Item type="ObjectFromClass">vvide.simulator.simulators.GHDLSimulator</Item>
+	<Item type="ObjectFromClass">vvide.simulator.simulators.IcarusVerilogSimulator</Item>
+	<Item type="ObjectFromClass">vvide.simulator.simulators.ModelSimSimulator</Item>
+</Simulators>

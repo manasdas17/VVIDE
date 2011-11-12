@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<SettingsManager type="SettingsManager">
+    <DefaultNumeralSystem type="NumeralSystem">HEXADECIMAL</DefaultNumeralSystem>
+    <TimeRatio type="Integer">10</TimeRatio>
+    <TimeLineHeight type="Integer">45</TimeLineHeight>
+    <InfoWidth type="Integer">150</InfoWidth>
+    <SignalHeight type="Integer">45</SignalHeight>
+    <TimeFont type="Font">
+        <FamilyName type="String">Monospaced</FamilyName>
+        <Size type="Integer">10</Size>
+        <Style type="Integer">0</Style>
+    </TimeFont>
+    <TimeColor type="Color">-12136704</TimeColor>
+    <TimeLineColor type="Color">-16768768</TimeLineColor>
+    <StartTimeFont type="Font">
+        <FamilyName type="String">Times New Roman</FamilyName>
+        <Size type="Integer">10</Size>
+        <Style type="Integer">0</Style>
+    </StartTimeFont>
+    <StartTimeColor type="Color">-12540913</StartTimeColor>
+    <LowOffset type="Integer">40</LowOffset>
+    <HighOffset type="Integer">15</HighOffset>
+    <SignalBoundColor type="Color">-16768768</SignalBoundColor>
+    <SignalNameFont type="Font">
+        <FamilyName type="String">Times New Roman</FamilyName>
+        <Size type="Integer">14</Size>
+        <Style type="Integer">1</Style>
+    </SignalNameFont>
+    <BitNrFont type="Font">
+        <FamilyName type="String">Arial</FamilyName>
+        <Size type="Integer">10</Size>
+        <Style type="Integer">0</Style>
+    </BitNrFont>
+    <SignalValueFont type="Font">
+        <FamilyName type="String">Dialog</FamilyName>
+        <Size type="Integer">10</Size>
+        <Style type="Integer">0</Style>
+    </SignalValueFont>
+    <MarkerDistanceFont type="Font">
+        <FamilyName type="String">Monospaced</FamilyName>
+        <Size type="Integer">12</Size>
+        <Style type="Integer">0</Style>
+    </MarkerDistanceFont>
+    <SelectedMarkerColor type="Color">-65536</SelectedMarkerColor>
+    <NonSelectedMarkerColor type="Color">-256</NonSelectedMarkerColor>
+    <DistanceTextColor type="Color">-256</DistanceTextColor>
+    <EditorFont type="Font">
+        <FamilyName type="String">Monospaced</FamilyName>
+        <Size type="Integer">13</Size>
+        <Style type="Integer">0</Style>
+    </EditorFont>
+    <GHDLPath type="String">ghdl</GHDLPath>
+    <IcarusCompilerPath type="String">iverilog</IcarusCompilerPath>
+    <IcarusSimulatorPath type="String">vvp</IcarusSimulatorPath>
+    <ModelSimBinPath type="String"/>
+    <UserDictionaryPath type="String">userdict.txt</UserDictionaryPath>
+    <EnglishDictionaryPath type="String">english_dic.zip</EnglishDictionaryPath>
+    <SelectedSignalBorderColor type="Color">-7951619</SelectedSignalBorderColor>
+    <SelectedSignalBackgroundColor type="Color">-7951619</SelectedSignalBackgroundColor>
+    <MarkerSelectionSensitivityArea type="Integer">8</MarkerSelectionSensitivityArea>
+</SettingsManager>

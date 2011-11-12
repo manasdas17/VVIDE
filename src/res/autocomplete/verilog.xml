@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Verilog Specs 
+/*
+ * This file is part of the VVIDE project.
+ * 
+ * Copyright (C) 2011 Pavel Fischer rubbiroid@gmail.com
+ * 
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
+ */
+ -->
+
+<api language="Verilog">
+	<environment paramStartChar="(" paramEndChar=")"
+		paramSeparator=", " terminal=";" />
+	<keywords>
+		<keyword name="`include" type="other"></keyword>
+		<keyword name="`define" type="other"></keyword>
+		<keyword name="`timescale" type="other"></keyword>
+		<keyword name="always" type="other"></keyword>
+		<keyword name="assign" type="other"></keyword>
+		<keyword name="begin" type="other"></keyword>
+		<keyword name="case" type="other"></keyword>
+		<keyword name="casex" type="other"></keyword>
+		<keyword name="casez" type="other"></keyword>
+		<keyword name="default" type="other"></keyword>
+		<keyword name="disable" type="other"></keyword>
+		<keyword name="else" type="other"></keyword>
+		<keyword name="end" type="other"></keyword>
+		<keyword name="endcase" type="other"></keyword>
+		<keyword name="endfunction" type="other"></keyword>
+		<keyword name="endmodule" type="other"></keyword>
+		<keyword name="endprimitive" type="other"></keyword>
+		<keyword name="endtable" type="other"></keyword>
+		<keyword name="endtask" type="other"></keyword>
+		<keyword name="forever" type="other"></keyword>
+		<keyword name="fork" type="other"></keyword>
+		<keyword name="function" type="other"></keyword>
+		<keyword name="if" type="other"></keyword>
+		<keyword name="initial" type="other"></keyword>
+		<keyword name="inout" type="other"></keyword>
+		<keyword name="input" type="other"></keyword>
+		<keyword name="join" type="other"></keyword>
+		<keyword name="module" type="other"></keyword>
+		<keyword name="negedge" type="other"></keyword>
+		<keyword name="output" type="other"></keyword>
+		<keyword name="posedge" type="other"></keyword>
+		<keyword name="primitive" type="other"></keyword>
+		<keyword name="repeat" type="other"></keyword>
+		<keyword name="table" type="other"></keyword>
+		<keyword name="task" type="other"></keyword>
+		<keyword name="while" type="other"></keyword>
+		<keyword name="wire" type="other"></keyword>
+		<keyword name="cmos" type="other"></keyword>
+		<keyword name="integer" type="other"></keyword>
+		<keyword name="nmos" type="other"></keyword>
+		<keyword name="pmos" type="other"></keyword>
+		<keyword name="pulldown" type="other"></keyword>
+		<keyword name="pullup" type="other"></keyword>
+		<keyword name="rcmos" type="other"></keyword>
+		<keyword name="real" type="other"></keyword>
+		<keyword name="reg" type="other"></keyword>
+		<keyword name="rnmos" type="other"></keyword>
+		<keyword name="rpmos" type="other"></keyword>
+		<keyword name="rtran" type="other"></keyword>
+		<keyword name="rtranif0" type="other"></keyword>
+		<keyword name="rtranif1" type="other"></keyword>
+		<keyword name="time" type="other"></keyword>
+		<keyword name="tran" type="other"></keyword>
+		<keyword name="tranif0" type="other"></keyword>
+		<keyword name="tranif1" type="other"></keyword>
+		<keyword name="$display" type="other"></keyword>
+		<keyword name="$displayb" type="other"></keyword>
+		<keyword name="$dumpall" type="other"></keyword>
+		<keyword name="$dumpfile" type="other"></keyword>
+		<keyword name="$dumpoff" type="other"></keyword>
+		<keyword name="$dumpon" type="other"></keyword>
+		<keyword name="$dumpvar" type="other"></keyword>
+		<keyword name="$fdisplay" type="other"></keyword>
+		<keyword name="$finish" type="other"></keyword>
+		<keyword name="$fmonitor" type="other"></keyword>
+		<keyword name="$fopen" type="other"></keyword>
+		<keyword name="$fstrobe" type="other"></keyword>
+		<keyword name="$fwrite" type="other"></keyword>
+		<keyword name="$monitor" type="other"></keyword>
+		<keyword name="$monitoro" type="other"></keyword>
+		<keyword name="$random" type="other"></keyword>
+		<keyword name="$realtime" type="other"></keyword>
+		<keyword name="$reset" type="other"></keyword>
+		<keyword name="$scope" type="other"></keyword>
+		<keyword name="$showscope" type="other"></keyword>
+		<keyword name="$stime" type="other"></keyword>
+		<keyword name="$stop" type="other"></keyword>
+		<keyword name="$strobe" type="other"></keyword>
+		<keyword name="$strobeh" type="other"></keyword>
+		<keyword name="$time" type="other"></keyword>
+	</keywords>
+</api>

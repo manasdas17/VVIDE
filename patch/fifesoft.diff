@@ -1,0 +1,36 @@
+--- a/RSTALanguageSupport/src/org/fife/rsta/ac/LanguageSupportFactory.java
++++ b/RSTALanguageSupport/src/org/fife/rsta/ac/LanguageSupportFactory.java
+@@ -80,7 +80,10 @@
+ 				prefix + "php.PhpLanguageSupport");
+ 		styleToSupport.put(SyntaxConstants.SYNTAX_STYLE_UNIX_SHELL,
+ 				prefix +"sh.ShellLanguageSupport");
+-
++		styleToSupport.put("text/vhdl",
++				"vvide.ui.views.editor.vhdl.VHDLLanguageSupport");
++		styleToSupport.put("text/verilog",
++				"vvide.ui.views.editor.verilog.VerilogLanguageSupport");
+ 	}
+ 
+--- a/RSyntaxTextArea/src/org/fife/ui/rsyntaxtextarea/DefaultTokenMakerFactory.java
++++ b/RSyntaxTextArea/src/org/fife/ui/rsyntaxtextarea/DefaultTokenMakerFactory.java
+@@ -84,6 +84,8 @@
+ 		map.put(SYNTAX_STYLE_UNIX_SHELL,		pkg + "UnixShellTokenMaker");
+ 		map.put(SYNTAX_STYLE_WINDOWS_BATCH,		pkg + "WindowsBatchTokenMaker");
+ 		map.put(SYNTAX_STYLE_XML,				pkg + "XMLTokenMaker");
++		map.put("text/vhdl", 					"vvide.ui.views.editor.vhdl.VHDLLexer");
++		map.put("text/verilog", 				"vvide.ui.views.editor.verilog.VerilogLexer");
+ 
+ 		return map;
+ 
+--- a/SpellChecker/src/org/fife/ui/rsyntaxtextarea/spell/SpellingParser.java
++++ b/SpellChecker/src/org/fife/ui/rsyntaxtextarea/spell/SpellingParser.java
+@@ -406,7 +406,7 @@
+ 
+ 				Token t = doc.getTokenListForLine(line);
+ 				while (t!=null && t.isPaintable()) {
+-					if (t.isComment()) {
++					if ((t.type > 0 && t.type < 7) || (t.type > 9 && t.type < 16)) {
+ 						startOffs = t.offset;
+ 						// TODO: Create a wordTokenizer that uses char[] array
+ 						// to prevent String allocation.
+

@@ -1,0 +1,24 @@
+This program is licensed under GPLv3 License.
+You can find a license text in the file "License".
+
+This program uses:
+
+Icon from Crystal Clear:
+license: LGPL
+http://commons.wikimedia.org/wiki/Crystal_Clear
+
+FifeSoft Projects: RSyntaxTextArea, AutoComplete, RSTALanguageSupport, SpellChecker:
+license: LGPL
+http://fifesoft.com/projects.php
+
+InfoNode Docking Windows:
+license: LGPL
+http://www.infonode.net/index.html?idw
+
+JFlex - The Fast Scanner Generator for Java:
+license: GPLv3
+http://jflex.de/
+
+MigLayout - Java Layout Manager for Swing, SWT and JavaFX2:
+license: GPL
+http://www.miglayout.com/

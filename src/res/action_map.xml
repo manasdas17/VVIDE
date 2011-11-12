@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HashMap type="HashMap">
+	<Item type="KeyValueInfo">
+		<Key type="String">RenameAction</Key>
+		<Value type="ObjectFromClass">vvide.actions.RenameAction</Value>
+	</Item>
+	<Item type="KeyValueInfo">
+		<Key type="String">CloseProjectAction</Key>
+		<Value type="ObjectFromClass">vvide.actions.CloseProjectAction</Value>
+	</Item>
+	<Item type="KeyValueInfo">
+		<Key type="String">CompileAllFilesAction</Key>
+		<Value type="ObjectFromClass">vvide.actions.CompileAllFilesAction</Value>
+	</Item>
+	<Item type="KeyValueInfo">
+		<Key type="String">CompileFileAction</Key>
+		<Value type="ObjectFromClass">vvide.actions.CompileFileAction</Value>
+	</Item>
+	<Item type="KeyValueInfo">
+		<Key type="String">CompileSelectedFilesAction</Key>
+		<Value type="ObjectFromClass">vvide.actions.CompileSelectedFilesAction</Value>
+	</Item>
+	<Item type="KeyValueInfo">
+		<Key type="String">CompileSimulateShowFileAction</Key>
+		<Value type="ObjectFromClass">vvide.actions.CompileSimulateShowFileAction</Value>
+	</Item>
+	<Item type="KeyValueInfo">
+		<Key type="String">CopyAction</Key>
+		<Value type="ObjectFromClass">vvide.actions.CopyAction</Value>
+	</Item>
+	<Item type="KeyValueInfo">
+		<Key type="String">CreateMarkerAction</Key>
+		<Value type="ObjectFromClass">vvide.actions.CreateMarkerAction</Value>
+	</Item>
+	<Item type="KeyValueInfo">
+		<Key type="String">CutAction</Key>
+		<Value type="ObjectFromClass">vvide.actions.CutAction</Value>
+	</Item>
+	<Item type="KeyValueInfo">
+		<Key type="String">DecreaseZoomAction</Key>
+		<Value type="ObjectFromClass">vvide.actions.DecreaseZoomAction</Value>
+	</Item>
+	<Item type="KeyValueInfo">
+		<Key type="String">DeleteAction</Key>
+		<Value type="ObjectFromClass">vvide.actions.DeleteAction</Value>
+	</Item>
+	<Item type="KeyValueInfo">
+		<Key type="String">DeleteAction</Key>
+		<Value type="ObjectFromClass">vvide.actions.DeleteAction</Value>
+	</Item>
+	<Item type="KeyValueInfo">
+		<Key type="String">EditFileAction</Key>
+		<Value type="ObjectFromClass">vvide.actions.EditFileAction</Value>
+	</Item>
+	<Item type="KeyValueInfo">
+		<Key type="String">ExitAction</Key>
+		<Value type="ObjectFromClass">vvide.actions.ExitAction</Value>
+	</Item>
+	<Item type="KeyValueInfo">
+		<Key type="String">FindTextAction</Key>
+		<Value type="ObjectFromClass">vvide.actions.FindTextAction</Value>
+	</Item>
+	<Item type="KeyValueInfo">
+		<Key type="String">ImportFileAction</Key>
+		<Value type="ObjectFromClass">vvide.actions.ImportFileAction</Value>
+	</Item>
+	<Item type="KeyValueInfo">
+		<Key type="String">IncreaseZoomAction</Key>
+		<Value type="ObjectFromClass">vvide.actions.IncreaseZoomAction</Value>
+	</Item>
+	<Item type="KeyValueInfo">
+		<Key type="String">MinimalZoomAction</Key>
+		<Value type="ObjectFromClass">vvide.actions.MinimalZoomAction</Value>
+	</Item>
+	<Item type="KeyValueInfo">
+		<Key type="String">MoveMarkerNextChangeAction</Key>
+		<Value type="ObjectFromClass">vvide.actions.MoveMarkerNextChangeAction</Value>
+	</Item>
+	<Item type="KeyValueInfo">
+		<Key type="String">MoveMarkerPreviousChangeAction</Key>
+		<Value type="ObjectFromClass">vvide.actions.MoveMarkerPreviousChangeAction</Value>
+	</Item>
+	<Item type="KeyValueInfo">
+		<Key type="String">MoveSignalDownAction</Key>
+		<Value type="ObjectFromClass">vvide.actions.MoveSignalDownAction</Value>
+	</Item>
+	<Item type="KeyValueInfo">
+		<Key type="String">MoveSignalUpAction</Key>
+		<Value type="ObjectFromClass">vvide.actions.MoveSignalUpAction</Value>
+	</Item>
+	<Item type="KeyValueInfo">
+		<Key type="String">NewProjectAction</Key>
+		<Value type="ObjectFromClass">vvide.actions.NewProjectAction</Value>
+	</Item>
+	<Item type="KeyValueInfo">
+		<Key type="String">NewFileAction</Key>
+		<Value type="ObjectFromClass">vvide.actions.NewFileAction</Value>
+	</Item>
+	<Item type="KeyValueInfo">
+		<Key type="String">NormalZoomAction</Key>
+		<Value type="ObjectFromClass">vvide.actions.NormalZoomAction</Value>
+	</Item>
+	<Item type="KeyValueInfo">
+		<Key type="String">OpenProjectAction</Key>
+		<Value type="ObjectFromClass">vvide.actions.OpenProjectAction</Value>
+	</Item>
+	<Item type="KeyValueInfo">
+		<Key type="String">PasteAction</Key>
+		<Value type="ObjectFromClass">vvide.actions.PasteAction</Value>
+	</Item>
+	<Item type="KeyValueInfo">
+		<Key type="String">RedoAction</Key>
+		<Value type="ObjectFromClass">vvide.actions.RedoAction</Value>
+	</Item>
+	<Item type="KeyValueInfo">
+		<Key type="String">RemoveFileAction</Key>
+		<Value type="ObjectFromClass">vvide.actions.RemoveFileAction</Value>
+	</Item>
+	<Item type="KeyValueInfo">
+		<Key type="String">RemoveMarkerAction</Key>
+		<Value type="ObjectFromClass">vvide.actions.RemoveMarkerAction</Value>
+	</Item>
+	<Item type="KeyValueInfo">
+		<Key type="String">RemoveSignalAction</Key>
+		<Value type="ObjectFromClass">vvide.actions.RemoveSignalAction</Value>
+	</Item>
+	<Item type="KeyValueInfo">
+		<Key type="String">PasteAction</Key>
+		<Value type="ObjectFromClass">vvide.actions.PasteAction</Value>
+	</Item>
+	<Item type="KeyValueInfo">
+		<Key type="String">ReplaceAllTextAction</Key>
+		<Value type="ObjectFromClass">vvide.actions.ReplaceAllTextAction</Value>
+	</Item>
+	<Item type="KeyValueInfo">
+		<Key type="String">ReplaceTextAction</Key>
+		<Value type="ObjectFromClass">vvide.actions.ReplaceTextAction</Value>
+	</Item>
+	<Item type="KeyValueInfo">
+		<Key type="String">SaveFileAction</Key>
+		<Value type="ObjectFromClass">vvide.actions.SaveFileAction</Value>
+	</Item>
+	<Item type="KeyValueInfo">
+		<Key type="String">SaveProjectAction</Key>
+		<Value type="ObjectFromClass">vvide.actions.SaveProjectAction</Value>
+	</Item>
+	<Item type="KeyValueInfo">
+		<Key type="String">ScrollToMarkerAction</Key>
+		<Value type="ObjectFromClass">vvide.actions.ScrollToMarkerAction</Value>
+	</Item>
+	<Item type="KeyValueInfo">
+		<Key type="String">SearchReplaceAction</Key>
+		<Value type="ObjectFromClass">vvide.actions.SearchReplaceAction</Value>
+	</Item>
+	<Item type="KeyValueInfo">
+		<Key type="String">SelectAllAction</Key>
+		<Value type="ObjectFromClass">vvide.actions.SelectAllAction</Value>
+	</Item>
+	<Item type="KeyValueInfo">
+		<Key type="String">ShowCompletionAction</Key>
+		<Value type="ObjectFromClass">vvide.actions.ShowCompletionAction</Value>
+	</Item>
+	<Item type="KeyValueInfo">
+		<Key type="String">ShowSignalAction</Key>
+		<Value type="ObjectFromClass">vvide.actions.ShowSignalAction</Value>
+	</Item>
+	<Item type="KeyValueInfo">
+		<Key type="String">ShowVCDFileAction</Key>
+		<Value type="ObjectFromClass">vvide.actions.ShowVCDFileAction</Value>
+	</Item>
+	<Item type="KeyValueInfo">
+		<Key type="String">SimulateFileAction</Key>
+		<Value type="ObjectFromClass">vvide.actions.SimulateFileAction</Value>
+	</Item>
+	<Item type="KeyValueInfo">
+		<Key type="String">StopSimulationAction</Key>
+		<Value type="ObjectFromClass">vvide.actions.StopSimulationAction</Value>
+	</Item>
+	<Item type="KeyValueInfo">
+		<Key type="String">UndoAction</Key>
+		<Value type="ObjectFromClass">vvide.actions.UndoAction</Value>
+	</Item>
+	<Item type="KeyValueInfo">
+		<Key type="String">WordCompletionAction</Key>
+		<Value type="ObjectFromClass">vvide.actions.WordCompletionAction</Value>
+	</Item>
+	<Item type="KeyValueInfo">
+		<Key type="String">WordWrapAction</Key>
+		<Value type="ObjectFromClass">vvide.actions.WordWrapAction</Value>
+	</Item>
+	<Item type="KeyValueInfo">
+		<Key type="String">ToggleCommentAction</Key>
+		<Value type="ObjectFromClass">vvide.actions.ToggleCommentAction</Value>
+	</Item>
+	<Item type="KeyValueInfo">
+		<Key type="String">ShowSettingsAction</Key>
+		<Value type="ObjectFromClass">vvide.actions.ShowSettingsAction</Value>
+	</Item>
+	<Item type="KeyValueInfo">
+		<Key type="String">ShowProjectViewAction</Key>
+		<Value type="ObjectFromClass">vvide.actions.ShowProjectViewAction</Value>
+	</Item>
+	<Item type="KeyValueInfo">
+		<Key type="String">ShowConsoleViewAction</Key>
+		<Value type="ObjectFromClass">vvide.actions.ShowConsoleViewAction</Value>
+	</Item>
+	<Item type="KeyValueInfo">
+		<Key type="String">ShowWaveViewAction</Key>
+		<Value type="ObjectFromClass">vvide.actions.ShowWaveViewAction</Value>
+	</Item>
+	<Item type="KeyValueInfo">
+		<Key type="String">ShowSignalTreeViewAction</Key>
+		<Value type="ObjectFromClass">vvide.actions.ShowSignalTreeViewAction</Value>
+	</Item>
+	<Item type="KeyValueInfo">
+		<Key type="String">ShowMarkerViewAction</Key>
+		<Value type="ObjectFromClass">vvide.actions.ShowMarkerViewAction</Value>
+	</Item>
+	<Item type="KeyValueInfo">
+		<Key type="String">ExportToSVGAction</Key>
+		<Value type="ObjectFromClass">vvide.actions.ExportToSVGAction</Value>
+	</Item>
+	<Item type="KeyValueInfo">
+		<Key type="String">SetAsTopLevelEntityAction</Key>
+		<Value type="ObjectFromClass">vvide.actions.SetAsTopLevelEntityAction</Value>
+	</Item>
+	<Item type="KeyValueInfo">
+		<Key type="String">ShowProjectPropertiesAction</Key>
+		<Value type="ObjectFromClass">vvide.actions.ShowProjectPropertiesAction</Value>
+	</Item>
+	<Item type="KeyValueInfo">
+		<Key type="String">OpenVCDFileAction</Key>
+		<Value type="ObjectFromClass">vvide.actions.OpenVCDFileAction</Value>
+	</Item>
+	<Item type="KeyValueInfo">
+		<Key type="String">RemoveAllSignalsAction</Key>
+		<Value type="ObjectFromClass">vvide.actions.RemoveAllSignalsAction</Value>
+	</Item>
+</HashMap> 

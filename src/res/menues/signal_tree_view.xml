@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Menu type="PopUpMenu">
+	<Item type="MenuItem">
+		<ActionName type="String">ShowSignalAction</ActionName>
+	</Item>
+	<Separator/>
+	<Item type="MenuItem">
+		<ActionName type="String">RemoveAllSignalsAction</ActionName>
+	</Item>
+</Menu> 
