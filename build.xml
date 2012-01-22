@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="VVIDE" default="make-jar" basedir=".">
+
+	<description>VVIDE build file</description>
+
+	<!-- Set global properties for this build. -->
+	<property name="version"          value="1.0.0"/>
+	<property name="source-dir"       location="src"/>
+	<property name="class-dir"        location="ant-classes"/>
+	<property name="dist-dir"         location="bin"/>
+	<property name="lib-dir"          location="libs"/>
+	<property name="doc-dir"          location="javadoc"/>
+	<property name="debug"            value="false"/>
+	<property name="debuglevel"       value="lines,var,source"/>
+	<property name="java-level"       value="1.6"/>
+
+	<!-- external libs -->
+	<path id="extlibs">
+		<fileset dir="${lib-dir}">
+			<include name="*.jar"/>
+		</fileset>
+	</path>
+
+	<!-- Compiles the classes.  -->
+	<target name="compile" description="Compile the source">
+		<delete includeEmptyDirs="true" quiet="true" dir="${class-dir}"/>
+		<mkdir dir="${class-dir}"/>
+		<javac srcdir="${source-dir}" destdir="${class-dir}"
+			deprecation="yes" debug="${debug}" debuglevel="${debuglevel}"
+			source="${java-level}" target="${java-level}">
+			<classpath refid="extlibs"/>
+		</javac>
+		<mkdir dir="${class-dir}/res"/>
+		<copy todir="${class-dir}/res">
+			<fileset dir="${source-dir}/res"/>
+		</copy>
+		<mkdir dir="${class-dir}/img"/>
+		<copy todir="${class-dir}/img">
+			<fileset dir="${source-dir}/img"/>
+		</copy>
+	</target>
+
+	<!-- Creates the jar file. -->
+	<target name="make-jar" depends="compile" description="Create VVIDE.jar">
+		<delete includeEmptyDirs="true" quiet="true" dir="${dist-dir}"/>
+		<mkdir dir="${dist-dir}"/>
+		<jar destfile="${dist-dir}/vvide.jar">
+			<fileset dir="${class-dir}"/>
+			<zipfileset src="${lib-dir}/idw-gpl.jar"/>
+			<zipfileset src="${lib-dir}/fifesoft.jar"/>
+			<zipfileset src="${lib-dir}/miglayout15-swing.jar"/>
+			<manifest>
+				<attribute name="Class-Path" value="."/>
+				<attribute name="Main-Class" value="vvide.VVIDE"/>
+				<attribute name="Specification-Title" value="VVIDE"/>
+				<attribute name="Specification-Version" value="${version}"/>
+				<attribute name="Implementation-Title" value="vvide."/>
+				<attribute name="Implementation-Version" value="${version}"/>
+			</manifest>
+		</jar>
+	</target>
+
+	<!-- Builds the javadoc.  -->
+	<target name="make-javadoc" depends="compile">
+		<javadoc  destdir="${doc-dir}" author="true" version="true"
+			 	breakiterator="yes">
+			<packageset dir="${source-dir}" defaultexcludes="yes">
+				<include name="vvide/**"/>
+			</packageset>
+		</javadoc>
+	</target>
+</project>
