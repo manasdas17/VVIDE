@@ -1,3 +1,5 @@
 #Backups
 *.*~
 .svn/
+#Build folder
+ant-classes/

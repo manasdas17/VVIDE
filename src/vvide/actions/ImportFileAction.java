@@ -98,13 +98,15 @@ public class ImportFileAction extends AbstractAction {
 						File destination =
 								new File( fileLocation + newFile.getFileName() );
 						IOMethods.copyFile( source, destination );
+						fileLocation = IOMethods.getRelativePath(
+								Application.projectManager.getCurrentProject()
+								.getProjectLocation(), fileLocation );
 					}
 					else {
+						newFile.setIsLinked(true);
 						fileLocation = importFileDialog.getFileLocation();
 					}
-					newFile.setFileLocation( IOMethods.getRelativePath(
-							Application.projectManager.getCurrentProject()
-									.getProjectLocation(), fileLocation ) );
+					newFile.setFileLocation( fileLocation );
 					Application.projectManager.getCurrentProject().addFile(
 							newFile );
 				}

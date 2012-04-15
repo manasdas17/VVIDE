@@ -71,10 +71,15 @@ public abstract class AbstractFile {
 	 * Project
 	 */
 	protected Project project;
+	/**
+	 * Flag is file linked
+	 */
+	private boolean isLinked;
 
 	// Tag's names
 	protected static final String FILE_NAME_TAG = "FileName";
 	protected static final String FILE_LOCATION_TAG = "FileLocation";
+	protected static final String FILE_IS_LINKED_TAG = "IsLinked";
 
 	/*
 	 * ======================= Getters / Setters =============================
@@ -136,9 +141,12 @@ public abstract class AbstractFile {
 	 * Return a full name of the file (path+"/"+name)
 	 */
 	public String getFullPath() {
-		String projectPath =
-				(project != null) ? project.getProjectLocation() : "";
-		return projectPath + fileLocation + fileName;
+		// Check if it's a linked file
+		if (isLinked || project == null) {
+			return fileLocation + fileName;
+		}
+		
+		return project.getProjectLocation() + fileLocation + fileName;
 	}
 
 	/**
@@ -161,6 +169,26 @@ public abstract class AbstractFile {
 	 * @return String with the default file extension
 	 */
 	public abstract String getDefaultFileExtension();
+
+	/**
+	 * Get a linked flag
+	 * 
+	 * @return true if the file is a linked file, false otherwise
+	 */
+	@Export( type = "Boolean", tagName = FILE_IS_LINKED_TAG )
+	public boolean getIsLinked() {
+		return isLinked;
+	}
+
+	/**
+	 * Set a new value for the Linked flag
+	 * 
+	 * @param isLinked the new value of the Linked flag to set
+	 */
+	@Import( tagName = FILE_IS_LINKED_TAG )
+	public void setIsLinked(boolean isLinked) {
+		this.isLinked = isLinked;
+	}
 
 	/**
 	 * Return a content of file
@@ -255,7 +283,9 @@ public abstract class AbstractFile {
 	/**
 	 * Constructor
 	 */
-	public AbstractFile() {}
+	public AbstractFile() {
+		isLinked = false;
+	}
 
 	/**
 	 * Constructor
@@ -268,6 +298,7 @@ public abstract class AbstractFile {
 	public AbstractFile( String name, String path ) {
 		setFileName( name );
 		setFileLocation( path );
+		isLinked = false;
 	}
 
 	@Override

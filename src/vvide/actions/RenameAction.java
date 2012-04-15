@@ -107,10 +107,17 @@ public class RenameAction extends AbstractAction {
 		if ( newName != null && !newName.equals( selectedFile.getFileName() ) ) {
 			
 			File oldFile = new File( selectedFile.getFullPath() );
-			File newFile =
-					new File( Application.projectManager.getCurrentProject()
-							.getProjectLocation()
-						+ selectedFile.getFilePath() + newName );
+			File newFile;
+			// Check the linked file
+			if (selectedFile.getIsLinked()) {
+				newFile = new File(selectedFile.getFilePath() + newName);
+			} else {
+				newFile =
+						new File( Application.projectManager.getCurrentProject()
+								.getProjectLocation()
+							+ selectedFile.getFilePath() + newName );
+			}
+			 
 			if ( !oldFile.renameTo( newFile ) ) {
 				JOptionPane.showMessageDialog( Application.mainFrame,
 						"Can't rename the file", "Error",
@@ -118,7 +125,8 @@ public class RenameAction extends AbstractAction {
 				return;
 			}
 			// Rename the TopEntity
-			if (Application.projectManager.getCurrentProject().getTopLevelEntityFileName().equals( selectedFile.getFileName() )) {
+			String topLevelEntity = Application.projectManager.getCurrentProject().getTopLevelEntityFileName(); 
+			if (topLevelEntity != null && topLevelEntity.equals( selectedFile.getFileName() )) {
 				Application.projectManager.getCurrentProject().setTopLevelEntityFileName( newName );
 			}
 			selectedFile.setFileName( newName );
