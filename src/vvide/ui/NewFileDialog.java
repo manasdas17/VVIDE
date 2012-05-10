@@ -198,7 +198,8 @@ public class NewFileDialog extends JDialog {
 			tbxFileLocation.setColumns( 10 );
 		}
 		{
-			SelectFileAction action = new SelectFileAction( this, "Select a folder", JFileChooser.DIRECTORIES_ONLY, null );
+			SelectFileAction action = new SelectFileAction( this, "Select a folder", 
+					JFileChooser.DIRECTORIES_ONLY, null, Application.projectManager.getCurrentProject().getProjectLocation() );
 			Method setMethod;
 			try {
 				setMethod =

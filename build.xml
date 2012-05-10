@@ -4,7 +4,7 @@
 	<description>VVIDE build file</description>
 
 	<!-- Set global properties for this build. -->
-	<property name="version"          value="1.0.0"/>
+	<property name="version"          value="1.0.2"/>
 	<property name="source-dir"       location="src"/>
 	<property name="class-dir"        location="ant-classes"/>
 	<property name="dist-dir"         location="bin"/>
@@ -45,7 +45,7 @@
 		<delete includeEmptyDirs="true" quiet="true" dir="${dist-dir}"/>
 		<mkdir dir="${dist-dir}"/>
 		<jar destfile="${dist-dir}/vvide.jar">
-			<fileset dir="${class-dir}"/>
+			<fileset dir="${class-dir}/"/>
 			<zipfileset src="${lib-dir}/idw-gpl.jar"/>
 			<zipfileset src="${lib-dir}/fifesoft.jar"/>
 			<zipfileset src="${lib-dir}/miglayout15-swing.jar"/>

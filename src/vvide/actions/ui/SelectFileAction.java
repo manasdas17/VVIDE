@@ -21,6 +21,7 @@ package vvide.actions.ui;
 
 import java.awt.Component;
 import java.awt.event.ActionEvent;
+import java.io.File;
 import java.lang.reflect.Method;
 
 import javax.swing.AbstractAction;
@@ -106,10 +107,13 @@ public class SelectFileAction extends AbstractAction {
 	 *        dialog title
 	 * @param owner
 	 *        owner of the dialog
+	 * @param startPath
+	 *        Default opened path
 	 */
 	public SelectFileAction( Component owner, String title,
-		int fileSelectionMode, FileFilter fileFilter ) {
-		this( owner, title, fileSelectionMode, fileFilter, false );
+		int fileSelectionMode, FileFilter fileFilter,
+		String startPath) {
+		this( owner, title, fileSelectionMode, fileFilter, false, startPath );
 	}
 
 	/**
@@ -125,13 +129,18 @@ public class SelectFileAction extends AbstractAction {
 	 *        owner of the dialog
 	 * @param isSaveDialog
 	 *        flat to use a save dialog
+	 * @param startPath
+	 *        Default opened path
 	 */
 	public SelectFileAction( Component owner, String title,
-		int fileSelectionMode, FileFilter fileFilter, boolean isSaveDialog ) {
+		int fileSelectionMode, FileFilter fileFilter, boolean isSaveDialog,
+		String startPath) {
 		super( "..." );
 		this.isSaveDialog = isSaveDialog;
 		fileChooserDialog = new JFileChooser();
 		fileChooserDialog.setDialogTitle( title );
+		if (startPath != null)
+			fileChooserDialog.setCurrentDirectory(new File(startPath));
 		fileChooserDialog.setFileSelectionMode( fileSelectionMode );
 		if ( fileFilter != null )
 			fileChooserDialog.setFileFilter( fileFilter );

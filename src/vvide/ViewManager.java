@@ -44,6 +44,7 @@ import net.infonode.docking.DockingWindow;
 import net.infonode.docking.OperationAbortedException;
 import net.infonode.docking.SplitWindow;
 import net.infonode.docking.TabWindow;
+import net.infonode.docking.View;
 import net.infonode.docking.util.ViewMap;
 
 /**
@@ -209,6 +210,15 @@ public class ViewManager {
 
 		Application.mainFrame.getRootWindow().setWindow( window );
 
+		// Focus in Project View
+		View projectView = viewMap.getView(PROJECT_VIEW_ID);
+		TabWindow parentWindow = (TabWindow)projectView.getWindowParent(); 
+		if ( parentWindow != null)
+		{
+			int index = parentWindow.getChildWindowIndex( projectView );
+			parentWindow.setSelectedTab( index );
+			parentWindow.getSelectedWindow().requestFocusInWindow();
+		}
 	}
 
 	/**

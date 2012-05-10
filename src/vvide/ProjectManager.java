@@ -209,6 +209,27 @@ public class ProjectManager {
 	}
 
 	/**
+	 * Try to guess the file type by it's name
+	 * @param filePath 
+	 *        path to the file
+	 * @return
+	 *        File type string or null 
+	 */
+	public String getFileType(String filePath) {
+		for (String fileType : supportedFiles.keySet())
+		{
+			try {
+				AbstractFile clazzInstance = getClassForFileType(fileType).newInstance();
+				if (filePath.endsWith(clazzInstance.getDefaultFileExtension()))
+				{
+					return fileType;
+				}
+			} catch (Exception e) {}
+		}
+		return null;
+	}
+
+	/**
 	 * Add a listener to a specified property
 	 * 
 	 * @param property

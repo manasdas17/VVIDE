@@ -201,7 +201,7 @@ public class NewProjectDialog extends JDialog {
 		// Project location
 		JLabel lblFileLocation = new JLabel( "Location:" );
 		contentPanel.add( lblFileLocation, "cell 0 3,alignx left" );
-		SelectFileAction action = new SelectFileAction( this, "Select a folder", JFileChooser.DIRECTORIES_ONLY, null );
+		SelectFileAction action = new SelectFileAction( this, "Select a folder", JFileChooser.DIRECTORIES_ONLY, null, null );
 		Method setMethod;
 		try {
 			setMethod =

@@ -110,6 +110,11 @@ public class ImportFileDialog extends JDialog {
 	 */
 	public void setFilePath( String filePath ) {
 		this.tbxFilePath.setText( filePath );
+		
+		// Trying to guess the file type
+		String fileType = Application.projectManager.getFileType(filePath);
+		if (fileType != null)
+			setFileType(fileType);
 	}
 
 	/**
@@ -198,7 +203,10 @@ public class ImportFileDialog extends JDialog {
 			tbxFilePath.setColumns( 10 );
 		}
 		{
-			SelectFileAction action = new SelectFileAction( this, "Select a file", JFileChooser.FILES_ONLY, null );
+			SelectFileAction action = new SelectFileAction(this,
+					"Select a file", JFileChooser.FILES_ONLY, null,
+					Application.projectManager.getCurrentProject()
+							.getProjectLocation());
 			Method setMethod;
 			try {
 				setMethod =

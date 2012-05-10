@@ -30,8 +30,10 @@ import java.util.Vector;
 import java.util.regex.Pattern;
 
 import vvide.Application;
+import vvide.ViewManager;
 import vvide.actions.StopSimulationAction;
 import vvide.logger.Logger;
+import vvide.ui.views.ConsoleView;
 
 /**
  * An Abstract simulator
@@ -194,6 +196,18 @@ public abstract class AbstractSimulator {
 		// Creating a process builder
 		ProcessBuilder builder = new ProcessBuilder( command );
 		builder.directory( new File( workingDirectory ) );
+		
+		// Print command
+		// Print the command
+		if (Application.settingsManager.getVerboseConsoleOutput()) {
+			StringBuilder commanString = new StringBuilder("Command: ");
+			for (String commandPart : command)
+				commanString.append(commandPart).append(' ');
+
+			((ConsoleView) Application.viewManager
+					.getView(ViewManager.CONSOLE_VIEW_ID))
+					.appendNormalText(commanString.toString());
+		}
 
 		// Starting a process
 		try {

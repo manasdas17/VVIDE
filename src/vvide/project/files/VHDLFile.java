@@ -36,7 +36,7 @@ public class VHDLFile extends AbstractSourceFile {
 
 	@Override
 	public String getDefaultFileExtension() {
-		return "vhdl";
+		return "vhd";
 	}
 
 	@Override

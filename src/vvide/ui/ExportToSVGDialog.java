@@ -288,7 +288,8 @@ public class ExportToSVGDialog extends JDialog {
 		SelectFileAction action =
 			new SelectFileAction( this, "Select a file...",
 				JFileChooser.FILES_ONLY, new FileNameExtensionFilter(
-					"SVG Files", "svg" ), true );
+					"SVG Files", "svg" ), true, 
+					Application.projectManager.getCurrentProject().getProjectLocation() );
 		try {
 			action.setSetPathMethod( this, getClass().getMethod( "setFileName",
 				String.class ) );

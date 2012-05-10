@@ -88,7 +88,7 @@ public class OpenProjectAction extends AbstractAction {
 		SelectFileAction action =
 			new SelectFileAction( Application.mainFrame, "Open project",
 				JFileChooser.FILES_ONLY, new FileNameExtensionFilter(
-					"VVIDE project", Project.PROJECT_FILE_EXTENSION ) );
+					"VVIDE project", Project.PROJECT_FILE_EXTENSION), null );
 		try {
 			action.setSetPathMethod( this, this.getClass().getMethod(
 				"setProjectPath", String.class ) );

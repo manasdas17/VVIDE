@@ -28,7 +28,7 @@
 		<SelectedSignalBorderColor type="ColorPanel" order="7" description="Color of the selected signal's border"/>
 		<SelectedSignalBackgroundColor type="ColorPanel" order="8" description="Background of the selected signals"/>
 	</Tab>	
-	<Tab type="TabPage" title="Other" order="3" items="8">
+	<Tab type="TabPage" title="Other" order="3" items="9">
 		<DefaultNumeralSystem type="NumeralSystemPanel" order="0" description="Default numeral system to use by showing the signal values"/>
 		<TimeRatio type="IntegerPanel" order="1" description="Multiply for a time"/>
 		<UserDictionaryPath type="StringPanel" order="2" description="Path to user dictionary"/>
@@ -37,5 +37,6 @@
 		<IcarusCompilerPath type="StringPanel" order="5" description="The path for the Icarus Verilog Compiler"/>
 		<IcarusSimulatorPath type="StringPanel" order="6" description="The path for the Icarus Verilog Simulator"/>
 		<ModelSimBinPath type="StringPanel" order="7" description="The binary folder of the ModelSim"/>
+		<VerboseConsoleOutput type="BooleanPanel" order="8" description="Verbose output to the console"/>
 	</Tab>
 </SettingDialog>

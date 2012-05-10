@@ -175,6 +175,10 @@ public class SettingsManager {
 	 * The size of sensitivity area for marker selection
 	 */
 	private int markerSelectionSensitivityArea = 7;
+	/**
+	 * Flag for the verbose console output
+	 */
+	private boolean verboseConsoleOutput = false;
 
 	/*
 	 * ======================= Getters / Setters =============================
@@ -868,6 +872,27 @@ public class SettingsManager {
 		this.markerSelectionSensitivityArea = markerSelectionSensitivityArea;
 	}
 
+	/**
+	 * Return the flag of the kind of console output
+	 * 
+	 * @return the boolean flag to verbose or compact console output
+	 */
+	@Export( tagName = "VerboseConsoleOutput", type = "Boolean" )
+	public boolean getVerboseConsoleOutput() {
+		return verboseConsoleOutput;
+	}
+
+	/**
+	 * Setter for the flag of the kind of console output
+	 * 
+	 * @param verboseConsoleOutput
+	 *        the boolean flag to verbose or compact console output
+	 */
+	@Import( tagName = "VerboseConsoleOutput" )
+	public void setVerboseConsoleOutput(
+		Boolean verboseConsoleOutput ) {
+		this.verboseConsoleOutput = verboseConsoleOutput;
+	}
 	/*
 	 * ============================ Methods ==================================
 	 */

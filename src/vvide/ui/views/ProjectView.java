@@ -301,7 +301,7 @@ public class ProjectView extends AbstractView {
 			if ( evt.getOldValue() != null ) {
 				removeProjectListeners( (Project) evt.getOldValue() );
 			}
-			// removing listener from project
+			// Add listener from project
 			if ( evt.getNewValue() != null ) {
 				currentProject = (Project) evt.getNewValue();
 				projectTree.setCellRenderer( new ProjectTreeCellRenderer(
@@ -318,6 +318,8 @@ public class ProjectView extends AbstractView {
 				addProjectListeners( currentProject );
 				addFilesToProjectTree( currentProject.getFiles().toArray(
 					new AbstractFile[] {} ) );
+				projectTree.expandPath(new TreePath(sourceNode.getPath()));
+				projectTree.expandPath(new TreePath(otherNode.getPath()));
 			}
 			else {
 				projectTree.setCellRenderer( new DefaultTreeCellRenderer() );

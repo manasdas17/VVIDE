@@ -47,6 +47,9 @@ public class ActionUtils {
 			AbstractSimulator simulator ) throws IOException {
 		// copy file to the temporary folder
 		IOMethods.copyFileToTempFolder( sourceFile );
+		// Console view
+		ConsoleView console = (ConsoleView) Application.viewManager
+				.getView( ViewManager.CONSOLE_VIEW_ID );
 
 		// Getting a Top-Level module in this file
 		try {
@@ -58,19 +61,16 @@ public class ActionUtils {
 				return;
 			}
 			// Notify start
-			((ConsoleView) Application.viewManager
-					.getView( ViewManager.CONSOLE_VIEW_ID ))
-					.appendNormalText( "Start compiling the file "
+			console.appendNormalText( "Start compiling the file "
 						+ sourceFile.getFileName() );
 
 			simulator.analyzeFile( sourceFile.getFileName() );
-			simulator.compile( sourceFile.getFileName(), topLevelModule );
-
 			CommonMethods.printInConsole( simulator );
 
-			((ConsoleView) Application.viewManager
-					.getView( ViewManager.CONSOLE_VIEW_ID ))
-					.appendNormalText( "Stop compiling the file "
+			simulator.compile( sourceFile.getFileName(), topLevelModule );
+			CommonMethods.printInConsole( simulator );
+
+			console.appendNormalText( "Stop compiling the file "
 						+ sourceFile.getFileName() );
 		}
 		catch ( IOException e ) {

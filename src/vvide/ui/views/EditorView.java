@@ -46,6 +46,7 @@ import net.infonode.docking.View;
 import vvide.Application;
 import vvide.logger.Logger;
 import vvide.project.AbstractFile;
+import vvide.project.Project;
 import vvide.ui.AbstractView;
 
 /**
@@ -89,6 +90,10 @@ public class EditorView extends AbstractView {
 	 * Listener to the file properties
 	 */
 	private FileNameListener fileNameListener = new FileNameListener();
+	/**
+	 * Listener to the removing file
+	 */
+	private FileRemovedListener fileRemovedListener = new FileRemovedListener();
 
 	/*
 	 * ======================= Getters / Setters =============================
@@ -204,6 +209,9 @@ public class EditorView extends AbstractView {
 
 		editableFile.addPropertyChangeListener( AbstractFile.FILE_NAME,
 				fileNameListener );
+		Application.projectManager.getCurrentProject()
+				.addPropertyChangeListener(Project.FILE_REMOVED,
+						fileRemovedListener);
 
 		// Add listeners
 		addListener( windowListener );
@@ -316,6 +324,21 @@ public class EditorView extends AbstractView {
 		@Override
 		public void propertyChange( PropertyChangeEvent evt ) {
 			updateTitle();
+		}
+
+	}
+	
+	/**
+	 * Listener to close the editor on removing files from project
+	 */
+	private class FileRemovedListener implements PropertyChangeListener {
+
+		@Override
+		public void propertyChange(PropertyChangeEvent evt) {
+			try {
+				closeWithAbort();
+			} catch (OperationAbortedException e) {
+			}
 		}
 
 	}
