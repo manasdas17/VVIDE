@@ -68,7 +68,7 @@ public class GHDLSimulator extends AbstractSimulator {
 			name = m.group( 2 );
 		}
 
-		return name.toLowerCase();
+		return (name != null) ? name.toLowerCase() : "";
 	}
 
 	@Override
