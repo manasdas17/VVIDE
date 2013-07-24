@@ -20,6 +20,7 @@
 package vvide.actions;
 
 import vvide.ViewManager;
+import vvide.ui.views.WaveView;
 
 /**
  * An Action to open/hide a wave view
@@ -41,7 +42,7 @@ public class ShowWaveViewAction extends AbstractShowViewAction {
 	 * Constructor
 	 */
 	public ShowWaveViewAction() {
-		super( "Wave", ViewManager.WAVE_VIEW_ID );
+		super( "Wave", WaveView.WAVE_VIEW_ID );
 		putValue( SHORT_DESCRIPTION, "Open or hide the wave view" );
 	}
 }

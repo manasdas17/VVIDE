@@ -62,6 +62,10 @@ public class ProjectView extends AbstractView {
 	 * Name of the project property
 	 */
 	public static String SELECTED_FILES = "SelectedFiles";
+	/**
+	 * ID for a ProjectView
+	 */
+	public static int PROJECT_VIEW_ID = 0;
 	/*
 	 * =========================== Attributes ================================
 	 */

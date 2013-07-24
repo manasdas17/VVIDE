@@ -21,45 +21,36 @@ package vvide;
 
 import javax.swing.SwingUtilities;
 
-import org.fife.ui.rsyntaxtextarea.RSyntaxTextArea;
-
 import vvide.ui.MainFrame;
 import vvide.ui.views.ConsoleView;
 import vvide.ui.views.MarkerView;
-import vvide.ui.views.ProjectView;
 import vvide.ui.views.SignalTreeView;
 import vvide.ui.views.WaveView;
 
 /**
  * Startup code for the program
  */
-public class VVIDE {
+public class VVIDEViewer {
 
 	/**
 	 * Start the program
 	 * 
 	 * @param args
-	 *        command line arguments
+	 *            command line arguments
 	 */
-	public static void main( String[] args ) {
-
-		// Init the RTextArea
-		new RSyntaxTextArea();
+	public static void main(String[] args) {
 
 		// Store all managers
-		Application.layoutFileName = "layout.xml";
-		Application.programName = "VVIDE";
-		Application.uiXmlFile = "setting_dialog.xml";
+		Application.layoutFileName = "layout_viewer.xml";
+		Application.programName = "VVIDE Viewer";
+		Application.uiXmlFile = "setting_dialog_viewer.xml";
 		Application.settingsManager = SettingsManager.loadSettings();
-		Application.projectManager = new ProjectManager();
 		Application.signalManager = new SignalManager();
 		Application.markerManager = new MarkerManager();
 		Application.viewManager = new ViewManager();
 
 		Application.viewManager.addView(ConsoleView.CONSOLE_VIEW_ID,
 				new ConsoleView(ConsoleView.CONSOLE_VIEW_ID));
-		Application.viewManager.addView(ProjectView.PROJECT_VIEW_ID,
-				new ProjectView(ProjectView.PROJECT_VIEW_ID));
 		Application.viewManager.addView(WaveView.WAVE_VIEW_ID, new WaveView(
 				WaveView.WAVE_VIEW_ID));
 		Application.viewManager.addView(MarkerView.MARKER_VIEW_ID,
@@ -67,23 +58,22 @@ public class VVIDE {
 		Application.viewManager.addView(SignalTreeView.SIGNAL_TREE_VIEW_ID,
 				new SignalTreeView(SignalTreeView.SIGNAL_TREE_VIEW_ID));
 
-		
 		Application.mainFrame = new MainFrame();
-		Application.actionManager = new ActionManager("action_map.xml");
+		Application.actionManager = new ActionManager("action_map_viewer.xml");
 
 		// Init
-		Application.mainFrame.initFrame("main_menu", "main_window");
+		Application.mainFrame.initFrame("main_menu_viewer", null);
 		Application.viewManager.initViews();
 
 		// Start a main window controller
-		SwingUtilities.invokeLater( new Runnable() {
+		SwingUtilities.invokeLater(new Runnable() {
 
 			@Override
 			public void run() {
-				Application.mainFrame.setVisible( true );
+				Application.mainFrame.setVisible(true);
 				// Load Layout
 				Application.viewManager.loadLayout();
 			}
-		} );
+		});
 	}
 }

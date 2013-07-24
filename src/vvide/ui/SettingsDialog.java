@@ -65,8 +65,7 @@ public class SettingsDialog extends JDialog {
 	/**
 	 * Package with items
 	 */
-	private static final String ITEM_PACKAGE =
-			"vvide.ui.settingitems.";
+	private static final String ITEM_PACKAGE = "vvide.ui.settingitems.";
 	/**
 	 * Dialog result
 	 */
@@ -79,6 +78,10 @@ public class SettingsDialog extends JDialog {
 	 * Map with setting panels
 	 */
 	private HashMap<String, AbstractSettingPanel> settingPanels;
+	/**
+	 * XML Filename with GUI
+	 */
+	private String uiFileName;
 
 	/*
 	 * ======================= Getters / Setters =============================
@@ -98,118 +101,116 @@ public class SettingsDialog extends JDialog {
 	/**
 	 * Create the dialog.
 	 */
-	public SettingsDialog() {
+	public SettingsDialog(String fileName) {
 
+		uiFileName = fileName;		
 		settingPanels = new HashMap<String, AbstractSettingPanel>();
 
 		// Build UI
-		setTitle( "Settings" );
-		setModalityType( ModalityType.APPLICATION_MODAL );
-		setModal( true );
-		getContentPane().setLayout( new BorderLayout( 0, 0 ) );
+		setTitle("Settings");
+		setModalityType(ModalityType.APPLICATION_MODAL);
+		setModal(true);
+		getContentPane().setLayout(new BorderLayout(0, 0));
 
 		JPanel panel = new JPanel();
-		getContentPane().add( panel, BorderLayout.SOUTH );
-		panel.setLayout( new MigLayout( "", "[][grow][right][right]", "[25px]" ) );
+		getContentPane().add(panel, BorderLayout.SOUTH);
+		panel.setLayout(new MigLayout("", "[][grow][right][right]", "[25px]"));
 
-		JButton btnLoadDefaults = new JButton( "Load Defaults" );
-		btnLoadDefaults.addActionListener( new ActionListener() {
+		JButton btnLoadDefaults = new JButton("Load Defaults");
+		btnLoadDefaults.addActionListener(new ActionListener() {
 
-			public void actionPerformed( ActionEvent e ) {
-				loadSettings( new SettingsManager() );
+			public void actionPerformed(ActionEvent e) {
+				loadSettings(new SettingsManager(), uiFileName);
 			}
-		} );
-		panel.add( btnLoadDefaults, "cell 0 0" );
+		});
+		panel.add(btnLoadDefaults, "cell 0 0");
 
-		JButton btnOk = new JButton( "OK" );
-		btnOk.addActionListener( new ActionListener() {
+		JButton btnOk = new JButton("OK");
+		btnOk.addActionListener(new ActionListener() {
 
-			public void actionPerformed( ActionEvent e ) {
+			public void actionPerformed(ActionEvent e) {
 				dialogResult = DialogResult.OK;
 				dispose();
 			}
-		} );
-		panel.add( btnOk, "cell 2 0" );
+		});
+		panel.add(btnOk, "cell 2 0");
 
-		JButton btnCancel = new JButton( "Cancel" );
-		btnCancel.addActionListener( new ActionListener() {
+		JButton btnCancel = new JButton("Cancel");
+		btnCancel.addActionListener(new ActionListener() {
 
-			public void actionPerformed( ActionEvent e ) {
+			public void actionPerformed(ActionEvent e) {
 				dialogResult = DialogResult.CANCEL;
 				dispose();
 			}
-		} );
-		panel.add( btnCancel, "cell 3 0" );
+		});
+		panel.add(btnCancel, "cell 3 0");
 
-		CommonMethods.addEscapeListener( this, btnCancel );
+		CommonMethods.addEscapeListener(this, btnCancel);
 
-		tabPane = new JTabbedPane( JTabbedPane.TOP );
-		getContentPane().add( tabPane, BorderLayout.CENTER );
+		tabPane = new JTabbedPane(JTabbedPane.TOP);
+		getContentPane().add(tabPane, BorderLayout.CENTER);
 
 		// Load settings
-		loadSettings( Application.settingsManager );
+		loadSettings(Application.settingsManager, uiFileName);
 
 		pack();
-		setLocationRelativeTo( Application.mainFrame );
-		setResizable( false );
+		setLocationRelativeTo(Application.mainFrame);
+		setResizable(false);
 	}
 
 	/**
 	 * Load the settings from the setting Manager
 	 * 
 	 * @param settingsManager
-	 *        a manager to load settings from
+	 *            a manager to load settings from
+	 * @param fileName
+	 *            XML File with setting
 	 */
-	protected void loadSettings( SettingsManager settingsManager ) {
+	protected void loadSettings(SettingsManager settingsManager, String fileName) {
 
 		// remove tabs
 		tabPane.removeAll();
 		settingPanels.clear();
 
 		XMLUtils xmlutils = new XMLUtils();
-		Element root =
-				xmlutils.parseFromXMLStream( getClass().getResourceAsStream(
-						"/res/setting_dialog.xml" ) );
+		Element root = xmlutils.parseFromXMLStream(getClass()
+				.getResourceAsStream("/res/" + fileName));
 
 		// getting tabs
-		int countTabs = Integer.valueOf( root.getAttribute( "items" ) );
+		int countTabs = Integer.valueOf(root.getAttribute("items"));
 
 		JPanel[] tabPanels = new JPanel[countTabs];
 		String[] tabNames = new String[countTabs];
 
-		Vector<Element> tabElements =
-				xmlutils.getElementNodeList( root.getChildNodes() );
+		Vector<Element> tabElements = xmlutils.getElementNodeList(root
+				.getChildNodes());
 
-		for ( Element nextTab : tabElements ) {
-			int tabIndex = Integer.valueOf( nextTab.getAttribute( "order" ) );
-			tabNames[tabIndex] = nextTab.getAttribute( "title" );
+		for (Element nextTab : tabElements) {
+			int tabIndex = Integer.valueOf(nextTab.getAttribute("order"));
+			tabNames[tabIndex] = nextTab.getAttribute("title");
 
 			// Fill the tab
-			JPanel tabPanel =
-					new JPanel( new MigLayout( "", "[][grow,right]", "" ) );
+			JPanel tabPanel = new JPanel(
+					new MigLayout("", "[][grow,right]", ""));
 
 			// Load the items
-			Vector<Element> itemElements =
-					xmlutils.getElementNodeList( nextTab.getChildNodes() );
-			for ( Element nextItem : itemElements ) {
-				String className =
-						ITEM_PACKAGE + nextItem.getAttribute( "type" );
+			Vector<Element> itemElements = xmlutils.getElementNodeList(nextTab
+					.getChildNodes());
+			for (Element nextItem : itemElements) {
+				String className = ITEM_PACKAGE + nextItem.getAttribute("type");
 				try {
-					AbstractSettingPanel itemPanel =
-							(AbstractSettingPanel) Class.forName( className )
-									.newInstance();
-					JLabel desc =
-							new JLabel( nextItem.getAttribute( "description" ) );
-					itemPanel.setValue( settingsManager.getSetting( nextItem
-							.getTagName() ) );
-					int index =
-							Integer.valueOf( nextItem.getAttribute( "order" ) );
-					tabPanel.add( desc, "cell 0 " + index );
-					tabPanel.add( itemPanel, "cell 1 " + index );
-					settingPanels.put( nextItem.getTagName(), itemPanel );
-				}
-				catch ( Exception e ) {
-					Logger.logError( this, e );
+					AbstractSettingPanel itemPanel = (AbstractSettingPanel) Class
+							.forName(className).newInstance();
+					JLabel desc = new JLabel(
+							nextItem.getAttribute("description"));
+					itemPanel.setValue(settingsManager.getSetting(nextItem
+							.getTagName()));
+					int index = Integer.valueOf(nextItem.getAttribute("order"));
+					tabPanel.add(desc, "cell 0 " + index);
+					tabPanel.add(itemPanel, "cell 1 " + index);
+					settingPanels.put(nextItem.getTagName(), itemPanel);
+				} catch (Exception e) {
+					Logger.logError(this, e);
 				}
 			}
 
@@ -217,8 +218,8 @@ public class SettingsDialog extends JDialog {
 		}
 
 		// Adding tabs to the tabPane
-		for ( int i = 0; i < countTabs; ++i ) {
-			tabPane.addTab( tabNames[i], tabPanels[i] );
+		for (int i = 0; i < countTabs; ++i) {
+			tabPane.addTab(tabNames[i], tabPanels[i]);
 		}
 	}
 
@@ -226,11 +227,9 @@ public class SettingsDialog extends JDialog {
 	 * Apply changes
 	 */
 	public void applySettings() {
-		Iterator<String> iter = settingPanels.keySet().iterator();
-		while ( iter.hasNext() ) {
-			String settingName = iter.next();
-			Application.settingsManager.setSetting( settingName, settingPanels
-					.get( settingName ).getValue() );
+		for (String settingName : settingPanels.keySet()) {
+			Application.settingsManager.setSetting(settingName, settingPanels
+					.get(settingName).getValue());
 		}
 	}
 }

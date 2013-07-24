@@ -22,7 +22,6 @@ package vvide.parser;
 import java.util.HashMap;
 
 import vvide.Application;
-import vvide.ViewManager;
 import vvide.signal.AbstractSignal;
 import vvide.signal.CompoundSignal;
 import vvide.signal.Scope;
@@ -234,7 +233,7 @@ public abstract class AbstractStructLexer {
 	public AbstractStructLexer() {
 		console =
 				(ConsoleView) Application.viewManager
-						.getView( ViewManager.CONSOLE_VIEW_ID );
+						.getView( ConsoleView.CONSOLE_VIEW_ID );
 	}
 
 	/**

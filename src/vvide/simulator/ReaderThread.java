@@ -27,7 +27,6 @@ import java.io.InputStreamReader;
 import javax.swing.text.Style;
 
 import vvide.Application;
-import vvide.ViewManager;
 import vvide.logger.Logger;
 import vvide.ui.views.ConsoleView;
 
@@ -66,7 +65,7 @@ public class ReaderThread extends Thread {
 		this.stream = stream;
 		this.console =
 				(ConsoleView) Application.viewManager
-						.getView( ViewManager.CONSOLE_VIEW_ID );
+						.getView( ConsoleView.CONSOLE_VIEW_ID );
 	}
 
 	@Override

@@ -173,6 +173,7 @@ public class IOMethods {
 			String line;
 			while ( (line = reader.readLine()) != null )
 				buffer.append( line ).append( "\n" );
+			reader.close();
 		}
 		catch ( IOException e ) {
 			Logger.logError( "IOMethods.loadTextFile()", e );

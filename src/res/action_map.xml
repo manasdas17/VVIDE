@@ -45,10 +45,6 @@
 		<Value type="ObjectFromClass">vvide.actions.DeleteAction</Value>
 	</Item>
 	<Item type="KeyValueInfo">
-		<Key type="String">DeleteAction</Key>
-		<Value type="ObjectFromClass">vvide.actions.DeleteAction</Value>
-	</Item>
-	<Item type="KeyValueInfo">
 		<Key type="String">EditFileAction</Key>
 		<Value type="ObjectFromClass">vvide.actions.EditFileAction</Value>
 	</Item>

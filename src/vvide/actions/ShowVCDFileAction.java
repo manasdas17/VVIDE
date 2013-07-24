@@ -64,7 +64,7 @@ public class ShowVCDFileAction extends AbstractAction {
 	 * Wave View
 	 */
 	private WaveView waveView = (WaveView) Application.viewManager
-		.getView( ViewManager.WAVE_VIEW_ID );
+		.getView( WaveView.WAVE_VIEW_ID );
 	/**
 	 * Backup
 	 */
@@ -168,14 +168,14 @@ public class ShowVCDFileAction extends AbstractAction {
 					// Show the signal tree view
 					SignalTreeView signalView =
 						(SignalTreeView) Application.viewManager
-							.getView( ViewManager.SIGNAL_TREE_VIEW_ID );
+							.getView( SignalTreeView.SIGNAL_TREE_VIEW_ID );
 					signalView.setModel( new SignalTreeModel(
 						Application.signalManager.getMainScope() ) );
 
 					// Show the MarkerView
 					MarkerView markerView =
 						(MarkerView) Application.viewManager
-							.getView( ViewManager.MARKER_VIEW_ID );
+							.getView( MarkerView.MARKER_VIEW_ID );
 					markerView.loadMarkers();
 
 					waveView.resetSettings();

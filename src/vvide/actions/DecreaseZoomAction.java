@@ -54,7 +54,7 @@ public class DecreaseZoomAction extends AbstractAction {
 	 * Instance of the WaveView
 	 */
 	private WaveView waveView = (WaveView) Application.viewManager
-			.getView( ViewManager.WAVE_VIEW_ID );
+			.getView( WaveView.WAVE_VIEW_ID );
 
 	/*
 	 * ============================ Methods ==================================
@@ -94,7 +94,7 @@ public class DecreaseZoomAction extends AbstractAction {
 
 	@Override
 	public void actionPerformed( ActionEvent e ) {
-		((WaveView) Application.viewManager.getView( ViewManager.WAVE_VIEW_ID ))
+		((WaveView) Application.viewManager.getView( WaveView.WAVE_VIEW_ID ))
 				.zoomOut();
 	}
 

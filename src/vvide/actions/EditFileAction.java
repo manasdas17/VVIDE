@@ -52,7 +52,7 @@ public class EditFileAction extends AbstractAction {
 	 * Project View
 	 */
 	private ProjectView projectView = (ProjectView) Application.viewManager
-			.getView( ViewManager.PROJECT_VIEW_ID );
+			.getView( ProjectView.PROJECT_VIEW_ID );
 
 	/*
 	 * ============================ Methods ==================================

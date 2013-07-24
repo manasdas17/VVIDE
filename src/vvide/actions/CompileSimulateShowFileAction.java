@@ -54,7 +54,7 @@ public class CompileSimulateShowFileAction extends AbstractAction {
 	 * Project View
 	 */
 	private ProjectView projectView = (ProjectView) Application.viewManager
-		.getView( ViewManager.PROJECT_VIEW_ID );
+		.getView( ProjectView.PROJECT_VIEW_ID );
 	/**
 	 * Listener for the simulation
 	 */
@@ -148,7 +148,7 @@ public class CompileSimulateShowFileAction extends AbstractAction {
 				|| Application.projectManager.getCurrentFile() != null
 				|| 
 					(
-						Application.viewManager.isViewOpened( ViewManager.PROJECT_VIEW_ID ) 
+						Application.viewManager.isViewOpened( ProjectView.PROJECT_VIEW_ID ) 
 						&&  selectedFiles != null 
 						&& selectedFiles.size() == 1 
 					)

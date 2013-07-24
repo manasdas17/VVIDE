@@ -66,13 +66,13 @@ public class ActionManager {
 	 * @param managers
 	 */
 	@SuppressWarnings( "unchecked" )
-	public ActionManager() {
+	public ActionManager(String fileName) {
 
 		// Load all actions
 		XMLUtils utils = new XMLUtils();
 		actionsMap =
 				(HashMap<String, AbstractAction>) utils
 						.loadFromXMLStream( getClass().getResourceAsStream(
-								"/res/action_map.xml" ) );
+								"/res/" + fileName ) );
 	}
 }

@@ -32,7 +32,7 @@ public class Application {
 	/**
 	 * Program Name
 	 */
-	public static String programName = "VVIDE";
+	public static String programName;
 	/**
 	 * A main Frame
 	 */
@@ -61,4 +61,13 @@ public class Application {
 	 * MarkerManager
 	 */
 	public static MarkerManager markerManager;
+	/**
+	 * UI Setting dialog
+	 */
+	public static String uiXmlFile;
+	/**
+	 * Name of the file with layout
+	 */
+	public static String layoutFileName;
+
 }

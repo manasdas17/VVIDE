@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SettingDialog type="SettingDialog" items="4">
+	<Tab type="TabPage" title="Sizes" order="0" items="6">
+		<TimeLineHeight type="IntegerPanel" order="0" description="The height of the time line"/>
+		<InfoWidth type="IntegerPanel" order="1" description="Width of the signal information's area"/>
+		<SignalHeight type="IntegerPanel" order="2" description="The height of the signal image"/>
+		<LowOffset type="IntegerPanel" order="3" description="The bottom position of the signal"/>
+		<HighOffset type="IntegerPanel" order="4" description="The top position of the signal"/>
+		<MarkerSelectionSensitivityArea type="IntegerPanel" order="5" description="Size of sensitivity area for marker selection"/>
+	</Tab>
+	<Tab type="TabPage" title="Fonts" order="1" items="7">
+		<TimeFont type="FontPanel" order="0" description="Font for a time on time line"/>
+		<StartTimeFont type="FontPanel" order="1" description="Font for a text with a smallest displayed time"/>
+		<SignalNameFont type="FontPanel" order="2" description="Font for a text with signal name"/>
+		<BitNrFont type="FontPanel" order="3" description="Font for a text with bit number"/>
+		<SignalValueFont type="FontPanel" order="4" description="Font for a text with signal value"/>
+		<MarkerDistanceFont type="FontPanel" order="5" description="Font for a distance text between two markers"/>
+		<EditorFont type="FontPanel" order="6" description="Default font for editor"/>
+	</Tab>
+	<Tab type="TabPage" title="Colors" order="2" items="9">
+		<TimeColor type="ColorPanel" order="0" description="Color of the text with the time"/>
+		<TimeLineColor type="ColorPanel" order="1" description="Color of the time line"/>
+		<StartTimeColor type="ColorPanel" order="2" description="Color of the text with the start time"/>
+		<SignalBoundColor type="ColorPanel" order="3" description="Color of the signal bound lines"/>
+		<SelectedMarkerColor type="ColorPanel" order="4" description="Color of the selected marker"/>
+		<NonSelectedMarkerColor type="ColorPanel" order="5" description="Color of the non selected marker"/>
+		<DistanceTextColor type="ColorPanel" order="6" description="Color of the selected marker"/>
+		<SelectedSignalBorderColor type="ColorPanel" order="7" description="Color of the selected signal's border"/>
+		<SelectedSignalBackgroundColor type="ColorPanel" order="8" description="Background of the selected signals"/>
+	</Tab>	
+	<Tab type="TabPage" title="Other" order="3" items="9">
+		<DefaultNumeralSystem type="NumeralSystemPanel" order="0" description="Default numeral system to use by showing the signal values"/>
+		<TimeRatio type="IntegerPanel" order="1" description="Multiply for a time"/>
+	</Tab>
+</SettingDialog>

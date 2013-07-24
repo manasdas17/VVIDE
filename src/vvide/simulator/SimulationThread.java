@@ -24,7 +24,6 @@ import java.io.IOException;
 import java.util.List;
 
 import vvide.Application;
-import vvide.ViewManager;
 import vvide.actions.StopSimulationAction;
 import vvide.logger.Logger;
 import vvide.ui.views.ConsoleView;
@@ -72,7 +71,7 @@ public class SimulationThread extends Thread {
 				.getCurrentProject().getTemporaryFolder() ) );
 		ConsoleView console =
 				(ConsoleView) Application.viewManager
-						.getView( ViewManager.CONSOLE_VIEW_ID );
+						.getView( ConsoleView.CONSOLE_VIEW_ID );
 
 		// Starting a process
 		try {

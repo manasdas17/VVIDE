@@ -38,6 +38,13 @@ import vvide.ui.AbstractView;
 public class ConsoleView extends AbstractView {
 
 	/*
+	 * =========================== Properties ================================
+	 */
+	/**
+	 * ID for a ConsoleView
+	 */
+	public static int CONSOLE_VIEW_ID = 1;
+	/*
 	 * =========================== Attributes ================================
 	 */
 	/**

@@ -27,7 +27,7 @@ package vvide;
 
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
-import java.util.*;
+import java.util.Vector;
 
 import vvide.signal.Marker;
 import vvide.ui.views.WaveView;
@@ -134,9 +134,9 @@ public class MarkerManager {
 	 */
 	public Marker getMarkerUnderCursor( int x ) {
 
-		if (!Application.viewManager.isViewOpened( ViewManager.WAVE_VIEW_ID )) return null;
+		if (!Application.viewManager.isViewOpened( WaveView.WAVE_VIEW_ID )) return null;
 		
-		WaveView view = (WaveView) Application.viewManager.getView( ViewManager.WAVE_VIEW_ID );
+		WaveView view = (WaveView) Application.viewManager.getView( WaveView.WAVE_VIEW_ID );
 		long position = view.getTimeFromCoord( x );
 		// Select a marker a time position +-5 zooms
 		long minPosition = correctPosition( position - Application.settingsManager.getMarkerSelectionSensitivityArea() * view.getZoom() );

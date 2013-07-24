@@ -126,7 +126,7 @@ public class SimulateFileAction extends AbstractAction {
 			else {
 				ProjectView view =
 					(ProjectView) Application.viewManager
-						.getView( ViewManager.PROJECT_VIEW_ID );
+						.getView( ProjectView.PROJECT_VIEW_ID );
 				Vector<AbstractFile> selectedFiles = view.getSelectedFiles();
 				if ( selectedFiles != null ) {
 					file = selectedFiles.get( 0 );
@@ -159,7 +159,7 @@ public class SimulateFileAction extends AbstractAction {
 			}
 			// Notify start
 			((ConsoleView) Application.viewManager
-				.getView( ViewManager.CONSOLE_VIEW_ID ))
+				.getView( ConsoleView.CONSOLE_VIEW_ID ))
 				.appendNormalText( "Start simulating" );
 			simulator.addPropertyChangeListener( simulationListener );
 			simulator.simulate( sourceFile.getFileName(), topLevelModule,

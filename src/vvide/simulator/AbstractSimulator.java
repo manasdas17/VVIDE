@@ -30,7 +30,6 @@ import java.util.Vector;
 import java.util.regex.Pattern;
 
 import vvide.Application;
-import vvide.ViewManager;
 import vvide.actions.StopSimulationAction;
 import vvide.logger.Logger;
 import vvide.ui.views.ConsoleView;
@@ -205,7 +204,7 @@ public abstract class AbstractSimulator {
 				commanString.append(commandPart).append(' ');
 
 			((ConsoleView) Application.viewManager
-					.getView(ViewManager.CONSOLE_VIEW_ID))
+					.getView(ConsoleView.CONSOLE_VIEW_ID))
 					.appendNormalText(commanString.toString());
 		}
 

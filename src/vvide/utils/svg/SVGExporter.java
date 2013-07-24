@@ -28,7 +28,6 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import org.w3c.dom.Document;
 
 import vvide.Application;
-import vvide.ViewManager;
 import vvide.logger.Logger;
 import vvide.signal.SignalRender;
 import vvide.signal.VisibleSignal;
@@ -109,7 +108,7 @@ public class SVGExporter {
 			// Fill the xml tree
 			SignalRender render = new SignalRender();
 			render.reloadSettings( (WaveView) Application.viewManager
-				.getView( ViewManager.WAVE_VIEW_ID ) );
+				.getView( WaveView.WAVE_VIEW_ID ) );
 			SVGRenderBackend backend = new SVGRenderBackend( document );
 			render.setBackend( backend );
 

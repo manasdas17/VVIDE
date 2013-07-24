@@ -105,12 +105,12 @@ public class OpenVCDFileAction extends AbstractAction {
 						// Show the signal tree view
 						SignalTreeView signalView =
 							(SignalTreeView) Application.viewManager
-								.getView( ViewManager.SIGNAL_TREE_VIEW_ID );
+								.getView( SignalTreeView.SIGNAL_TREE_VIEW_ID );
 						signalView.setModel( new SignalTreeModel(
 							Application.signalManager.getMainScope() ) );
 
 						((WaveView) (Application.viewManager
-							.getView( ViewManager.WAVE_VIEW_ID )))
+							.getView( WaveView.WAVE_VIEW_ID )))
 							.resetSettings();
 
 					}

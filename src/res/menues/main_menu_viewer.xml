@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MenuBar type="MenuBar">
+	<Menu type="Menu">
+		<Name type="String">File</Name>
+		<Item type="MenuItem">
+			<ActionName type="String">OpenVCDFileAction</ActionName>
+		</Item>
+		<Separator />
+		<Item type="MenuItem">
+			<ActionName type="String">ExitAction</ActionName>
+		</Item>
+	</Menu>
+	<Menu type="Menu">
+		<Name type="String">View</Name>
+		<Item type="MenuItem">
+			<ActionName type="String">ShowSignalAction</ActionName>
+		</Item>
+		<Item type="MenuItem">
+			<ActionName type="String">RemoveSignalAction</ActionName>
+		</Item>
+		<Separator />
+		<Item type="MenuItem">
+			<ActionName type="String">CreateMarkerAction</ActionName>
+		</Item>
+		<Item type="MenuItem">
+			<ActionName type="String">RemoveMarkerAction</ActionName>
+		</Item>
+		<Item type="MenuItem">
+			<ActionName type="String">ScrollToMarkerAction</ActionName>
+		</Item>
+		<Separator />
+		<Item type="MenuItem">
+			<ActionName type="String">IncreaseZoomAction</ActionName>
+		</Item>
+		<Item type="MenuItem">
+			<ActionName type="String">DecreaseZoomAction</ActionName>
+		</Item>
+		<Item type="MenuItem">
+			<ActionName type="String">NormalZoomAction</ActionName>
+		</Item>
+		<Item type="MenuItem">
+			<ActionName type="String">MinimalZoomAction</ActionName>
+		</Item>
+		<Separator/>
+		<Item type="MenuItem">
+			<ActionName type="String">ExportToSVGAction</ActionName>
+		</Item>
+	</Menu>
+	<Menu type="Menu">
+		<Name type="String">Window</Name>
+		<Item type="CheckBoxMenuItem">
+			<ActionName type="String">ShowConsoleViewAction</ActionName>
+		</Item>
+		<Item type="CheckBoxMenuItem">
+			<ActionName type="String">ShowWaveViewAction</ActionName>
+		</Item>
+		<Item type="CheckBoxMenuItem">
+			<ActionName type="String">ShowSignalTreeViewAction</ActionName>
+		</Item>
+		<Item type="CheckBoxMenuItem">
+			<ActionName type="String">ShowMarkerViewAction</ActionName>
+		</Item>
+	</Menu>
+</MenuBar> 

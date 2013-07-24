@@ -36,7 +36,6 @@ import javax.swing.KeyStroke;
 import org.fife.ui.rsyntaxtextarea.RSyntaxTextArea;
 
 import vvide.Application;
-import vvide.ViewManager;
 import vvide.simulator.AbstractSimulator;
 import vvide.ui.views.ConsoleView;
 
@@ -81,7 +80,7 @@ public class CommonMethods {
 		// Fill the console
 		ConsoleView console =
 			(ConsoleView) Application.viewManager
-				.getView( ViewManager.CONSOLE_VIEW_ID );
+				.getView( ConsoleView.CONSOLE_VIEW_ID );
 		if ( simulator.getOutputData() != null )
 			console.appendNormalText( simulator.getOutputData() );
 		if ( simulator.getErrorData() != null )

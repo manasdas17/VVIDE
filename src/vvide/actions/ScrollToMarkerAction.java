@@ -48,7 +48,7 @@ public class ScrollToMarkerAction extends AbstractAction {
 	 * Instance of the WaveView
 	 */
 	private WaveView waveView = (WaveView) Application.viewManager
-			.getView( ViewManager.WAVE_VIEW_ID );
+			.getView( WaveView.WAVE_VIEW_ID );
 
 	/*
 	 * ============================ Methods ==================================

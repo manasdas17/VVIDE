@@ -47,6 +47,13 @@ import vvide.utils.CommonMethods;
  */
 public class SignalTreeView extends AbstractView {
 	/*
+	 * =========================== Properties ================================
+	 */
+	/**
+	 * ID for a SignalTreeView
+	 */
+	public static int SIGNAL_TREE_VIEW_ID = 4;
+	/*
 	 * =========================== Attributes ================================
 	 */
 	/**
@@ -87,14 +94,16 @@ public class SignalTreeView extends AbstractView {
 	 */
 	public Vector<AbstractSignal> getSelectedSignals() {
 		// Vector with selected signals
-		Vector<AbstractSignal> selectedSignals =
-				new Vector<AbstractSignal>(
-						signalTree.getSelectionPaths().length );
-		for ( TreePath path : signalTree.getSelectionPaths() ) {
-			if ( !(path.getLastPathComponent() instanceof Scope) )
-				selectedSignals.add( (AbstractSignal) path
-						.getLastPathComponent() );
-		}
+		TreePath[] selectionPaths = signalTree.getSelectionPaths();
+		Vector<AbstractSignal> selectedSignals = new Vector<AbstractSignal>();
+		
+		if (selectionPaths != null)
+			for ( TreePath path : selectionPaths ) {
+				if ( !(path.getLastPathComponent() instanceof Scope) )
+					selectedSignals.add( (AbstractSignal) path
+							.getLastPathComponent() );
+			}
+		
 		return selectedSignals;
 	}
 

@@ -48,7 +48,7 @@ public class ShowSignalAction extends AbstractAction {
 	 * Instance of the signal Tree view
 	 */
 	private SignalTreeView view = (SignalTreeView) Application.viewManager
-			.getView( ViewManager.SIGNAL_TREE_VIEW_ID );
+			.getView( SignalTreeView.SIGNAL_TREE_VIEW_ID );
 	/**
 	 * Listener for selected signals
 	 */
@@ -77,6 +77,7 @@ public class ShowSignalAction extends AbstractAction {
 							view.addPropertyChangeListener(
 									ProjectView.SELECTED_FILES,
 									selectedSignalsListener );
+							selectedSignalsListener.propertyChange(null);
 						}
 						else {
 							view.removePropertyChangeListener(
@@ -93,7 +94,7 @@ public class ShowSignalAction extends AbstractAction {
 		// A signal to add
 		Vector<AbstractSignal> signals =
 				(Vector<AbstractSignal>) ((SignalTreeView) Application.viewManager
-						.getView( ViewManager.SIGNAL_TREE_VIEW_ID ))
+						.getView( SignalTreeView.SIGNAL_TREE_VIEW_ID ))
 						.getSelectedSignals();
 
 		if ( (signals != null) && (signals.size() > 0) ) {

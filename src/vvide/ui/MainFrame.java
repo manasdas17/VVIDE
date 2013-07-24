@@ -135,13 +135,15 @@ public class MainFrame extends JFrame {
 	/**
 	 * Init the frame
 	 */
-	public void initFrame() {
+	public void initFrame(String mainMenu, String mainToolbar) {
 		// Build the main menu
-		JMenuBar menuBar = CommonMethods.getMenubar( "main_menu" );
+		JMenuBar menuBar = CommonMethods.getMenubar( mainMenu );
 		setJMenuBar( menuBar );
 
 		// Get a toolbar
-		JToolBar toolbar = CommonMethods.getToolbar( "main_window" );
+		if (mainToolbar == null) return;
+		
+		JToolBar toolbar = CommonMethods.getToolbar( mainToolbar );
 		// Getting a textBox
 		for ( Component comp : toolbar.getComponents() ) {
 			if ( comp instanceof JTextField ) {

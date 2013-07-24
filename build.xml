@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<project name="VVIDE" default="make-jar" basedir=".">
+<project name="VVIDE" default="make-jar-both" basedir=".">
 
 	<description>VVIDE build file</description>
 
 	<!-- Set global properties for this build. -->
-	<property name="version"          value="1.0.2"/>
+	<property name="version"          value="1.1"/>
 	<property name="source-dir"       location="src"/>
 	<property name="class-dir"        location="ant-classes"/>
 	<property name="dist-dir"         location="bin"/>
@@ -38,12 +38,12 @@
 		<copy todir="${class-dir}/img">
 			<fileset dir="${source-dir}/img"/>
 		</copy>
+        <delete includeEmptyDirs="true" quiet="true" dir="${dist-dir}"/>
+        <mkdir dir="${dist-dir}"/>
 	</target>
 
-	<!-- Creates the jar file. -->
-	<target name="make-jar" depends="compile" description="Create VVIDE.jar">
-		<delete includeEmptyDirs="true" quiet="true" dir="${dist-dir}"/>
-		<mkdir dir="${dist-dir}"/>
+	<!-- Creates the VVIDE.jar file. -->
+	<target name="make-jar-vvide" depends="compile" description="Create VVIDE.jar">
 		<jar destfile="${dist-dir}/vvide.jar">
 			<fileset dir="${class-dir}/"/>
 			<zipfileset src="${lib-dir}/idw-gpl.jar"/>
@@ -59,6 +59,28 @@
 			</manifest>
 		</jar>
 	</target>
+	
+   <!-- Creates the VVIDEViewer.jar file. -->
+    <target name="make-jar-viewer" depends="compile" description="Create VVIDEViewer.jar">
+        <jar destfile="${dist-dir}/vvideviewer.jar">
+            <fileset dir="${class-dir}/"/>
+            <zipfileset src="${lib-dir}/idw-gpl.jar"/>
+            <zipfileset src="${lib-dir}/fifesoft.jar"/>
+            <zipfileset src="${lib-dir}/miglayout15-swing.jar"/>
+            <manifest>
+                <attribute name="Class-Path" value="."/>
+                <attribute name="Main-Class" value="vvide.VVIDEViewer"/>
+                <attribute name="Specification-Title" value="VVIDEViewer"/>
+                <attribute name="Specification-Version" value="${version}"/>
+                <attribute name="Implementation-Title" value="vvide."/>
+                <attribute name="Implementation-Version" value="${version}"/>
+            </manifest>
+        </jar>
+    </target>
+	
+   <!-- Creates tboth jar file. -->
+    <target name="make-jar-both" depends="make-jar-vvide,make-jar-viewer" description="Create both jars">
+    </target>
 
 	<!-- Builds the javadoc.  -->
 	<target name="make-javadoc" depends="compile">

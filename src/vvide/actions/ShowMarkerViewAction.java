@@ -20,6 +20,7 @@
 package vvide.actions;
 
 import vvide.ViewManager;
+import vvide.ui.views.MarkerView;
 
 /**
  * An Action to open/hide a marker view
@@ -41,7 +42,7 @@ public class ShowMarkerViewAction extends AbstractShowViewAction {
 	 * Constructor
 	 */
 	public ShowMarkerViewAction() {
-		super( "Markers", ViewManager.MARKER_VIEW_ID );
+		super( "Markers", MarkerView.MARKER_VIEW_ID );
 		putValue( SHORT_DESCRIPTION, "Open or hide the marker view" );
 	}
 }

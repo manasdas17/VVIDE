@@ -20,6 +20,7 @@
 package vvide.actions;
 
 import vvide.ViewManager;
+import vvide.ui.views.ProjectView;
 
 /**
  * An Action to show/hide a project view
@@ -41,7 +42,7 @@ public class ShowProjectViewAction extends AbstractShowViewAction {
 	 * Constructor
 	 */
 	public ShowProjectViewAction() {
-		super( "Project View", ViewManager.PROJECT_VIEW_ID );
+		super( "Project View", ProjectView.PROJECT_VIEW_ID );
 		putValue( SHORT_DESCRIPTION, "Open or hide the project View" );
 	}
 }

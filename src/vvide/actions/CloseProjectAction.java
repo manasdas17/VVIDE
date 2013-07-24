@@ -28,7 +28,6 @@ import javax.swing.JOptionPane;
 
 import vvide.Application;
 import vvide.ProjectManager;
-import vvide.ViewManager;
 import vvide.ui.DialogResult;
 import vvide.ui.views.ConsoleView;
 import vvide.utils.CommonMethods;
@@ -103,7 +102,7 @@ public class CloseProjectAction extends AbstractAction {
 
 		// Clear the console
 		((ConsoleView) Application.viewManager
-				.getView( ViewManager.CONSOLE_VIEW_ID )).clearContent();
+				.getView( ConsoleView.CONSOLE_VIEW_ID )).clearContent();
 
 		Application.signalManager.removeAll();
 		Application.markerManager.removeAll();

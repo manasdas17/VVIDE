@@ -85,7 +85,11 @@ public class SignalValueDump {
 	public boolean addRecord( long time, String c ) {
 		// getting a time
 		buffer.putLong( time );
-		buffer.put( c.getBytes() );
+		while (c.length() < valueLength) {
+			c = "0"+c;
+		}
+ 		buffer.put( c.getBytes() );
+		
 		return true;
 	}
 

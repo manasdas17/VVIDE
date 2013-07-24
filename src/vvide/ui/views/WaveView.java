@@ -64,6 +64,10 @@ public class WaveView extends AbstractView {
 	 * Name of the project property
 	 */
 	public static String ZOOM_CHANGED = "ZoomChanged";
+	/**
+	 * ID for a WaveView
+	 */
+	public static int WAVE_VIEW_ID = 2;
 
 	/*
 	 * =========================== Attributes ================================

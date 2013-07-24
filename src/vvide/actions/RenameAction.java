@@ -72,10 +72,10 @@ public class RenameAction extends AbstractAction {
 	@Override
 	public void actionPerformed( ActionEvent e ) {
 		// getting the selected item
-		if ( Application.viewManager.isViewOpened( ViewManager.PROJECT_VIEW_ID ) ) {
+		if ( Application.viewManager.isViewOpened( ProjectView.PROJECT_VIEW_ID ) ) {
 			ProjectView projectVew =
 					(ProjectView) Application.viewManager
-							.getView( ViewManager.PROJECT_VIEW_ID );
+							.getView( ProjectView.PROJECT_VIEW_ID );
 			Object selectedObject = projectVew.getSelectedItem();
 			if ( selectedObject == null || selectedObject instanceof Project ) {
 				renameProject();

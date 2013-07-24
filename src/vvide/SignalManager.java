@@ -26,15 +26,15 @@
 
 package vvide;
 
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeSupport;
+import java.util.Vector;
+
 import vvide.signal.AbstractSignal;
 import vvide.signal.NumeralSystem;
 import vvide.signal.Scope;
 import vvide.signal.SignalValueDump;
 import vvide.signal.VisibleSignal;
-
-import java.beans.PropertyChangeListener;
-import java.beans.PropertyChangeSupport;
-import java.util.*;
 
 /**
  * SignalManager Class Controls the operations with loaded signals

@@ -175,8 +175,10 @@ public class VCDParserThread extends Thread {
 
 		// allocation
 		for ( int i = 1; i <= structLexer.maxVarID; ++i ) {
+			Integer bitWidthObj = structLexer.bitWidthMap.get( i );
+			int bitWidth = (bitWidthObj == null ) ? 0 : bitWidthObj;
 			SignalValueDump dump =
-					new SignalValueDump( structLexer.changesBuffer[i], structLexer.bitWidthMap.get( i ) );
+					new SignalValueDump( structLexer.changesBuffer[i], bitWidth );
 			Application.signalManager.setSignalDump( i, dump );
 		}
 		

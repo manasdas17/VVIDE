@@ -96,7 +96,7 @@ public class SortedListModel extends AbstractListModel {
 	public boolean removeElement( Object element ) {
 		boolean removed = model.remove( element );
 		if ( removed ) {
-			fireContentsChanged( this, 0, getSize() );
+			fireContentsChanged( this, 0, getSize() + 1 );
 		}
 		return removed;
 	}

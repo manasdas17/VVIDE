@@ -20,6 +20,7 @@
 package vvide.actions;
 
 import vvide.ViewManager;
+import vvide.ui.views.ConsoleView;
 
 /**
  * An Action to open/hide a console view
@@ -41,7 +42,7 @@ public class ShowConsoleViewAction extends AbstractShowViewAction {
 	 * Constructor
 	 */
 	public ShowConsoleViewAction() {
-		super( "Console", ViewManager.CONSOLE_VIEW_ID );
+		super( "Console", ConsoleView.CONSOLE_VIEW_ID );
 		putValue( SHORT_DESCRIPTION, "Open or hide the console" );
 	}
 }

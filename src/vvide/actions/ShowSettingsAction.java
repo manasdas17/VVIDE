@@ -55,15 +55,15 @@ public class ShowSettingsAction extends AbstractAction {
 
 	@Override
 	public void actionPerformed( ActionEvent e ) {
-		SettingsDialog dialog = new SettingsDialog();
+		SettingsDialog dialog = new SettingsDialog(Application.uiXmlFile);
 		dialog.setVisible( true );
 
 		if ( dialog.getDialogResult() == DialogResult.OK ) {
 			dialog.applySettings();
-			if ( Application.viewManager.isViewOpened( ViewManager.WAVE_VIEW_ID ) ) {
+			if ( Application.viewManager.isViewOpened( WaveView.WAVE_VIEW_ID ) ) {
 				WaveView waveView =
 						((WaveView) Application.viewManager
-								.getView( ViewManager.WAVE_VIEW_ID ));
+								.getView( WaveView.WAVE_VIEW_ID ));
 				waveView.reloadSettings();
 				waveView.renderContent();
 			}

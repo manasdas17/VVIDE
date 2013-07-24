@@ -34,6 +34,13 @@ import javax.swing.event.ListSelectionListener;
 public class MarkerView extends AbstractView {
 
 	/*
+	 * =========================== Properties ================================
+	 */
+	/**
+	 * ID for a MarkerView
+	 */
+	public static int MARKER_VIEW_ID = 3;
+	/*
 	 * =========================== Attributes ================================
 	 */
 	/**

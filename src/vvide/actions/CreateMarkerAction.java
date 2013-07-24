@@ -50,24 +50,11 @@ public class CreateMarkerAction extends AbstractAction {
 	public CreateMarkerAction() {
 		super( "New marker" );
 		putValue( SHORT_DESCRIPTION, "Create a new marker at position 0" );
-
-		setEnabled( false );
-
-		// Adding a listener to the current project
-		Application.projectManager.addPropertyChangeListener(
-				ProjectManager.CURRENT_PROJECT, new PropertyChangeListener() {
-
-					@Override
-					public void propertyChange( PropertyChangeEvent e ) {
-						setEnabled( e.getNewValue() != null );
-					}
-				} );
+		setEnabled( true );
 	}
 
 	@Override
 	public void actionPerformed( ActionEvent e ) {
-		if ( Application.projectManager.getCurrentProject() == null ) return;
-
 		Application.markerManager.addMarker( 0 );
 	}
 }

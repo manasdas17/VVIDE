@@ -58,7 +58,7 @@ public class ExitAction extends AbstractAction {
 				JOptionPane.YES_NO_OPTION ) == JOptionPane.YES_OPTION ) {
 
 			// Close the project
-			if ( Application.projectManager.getCurrentProject() != null ) {
+			if ( Application.projectManager != null && Application.projectManager.getCurrentProject() != null ) {
 				CloseProjectAction action =
 						(CloseProjectAction) Application.actionManager
 								.getAction( "CloseProjectAction" );

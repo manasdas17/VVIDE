@@ -45,14 +45,14 @@ public class RemoveFileAction extends AbstractAction {
 	 * =========================== Attributes ================================
 	 */
 	/**
-	 * Verison UID
+	 * Version UID
 	 */
 	private static final long serialVersionUID = 3116271285195239394L;
 	/**
 	 * Instance of the WaveView
 	 */
 	private ProjectView projectView = (ProjectView) Application.viewManager
-			.getView( ViewManager.PROJECT_VIEW_ID );
+			.getView( ProjectView.PROJECT_VIEW_ID );
 	/**
 	 * Listener for selecting files
 	 */

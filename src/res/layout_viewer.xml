@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<SplitWindow type="SplitWindow">
+    <isHorizontal type="Boolean">false</isHorizontal>
+    <DividerLocation type="Float">0.66</DividerLocation>
+    <FirstWindow type="SplitWindow">
+        <isHorizontal type="Boolean">true</isHorizontal>
+        <DividerLocation type="Float">0.33206108</DividerLocation>
+        <FirstWindow type="TransientTabWindow">
+            <isTransient type="Boolean">false</isTransient>
+            <WiewID type="Integer">3</WiewID>
+            <WiewID type="Integer">4</WiewID>
+        </FirstWindow>
+        <SecondWindow type="TransientTabWindow">
+            <isTransient type="Boolean">false</isTransient>
+            <WiewID type="Integer">2</WiewID>
+        </SecondWindow>
+    </FirstWindow>
+    <SecondWindow type="TransientTabWindow">
+        <isTransient type="Boolean">false</isTransient>
+        <WiewID type="Integer">1</WiewID>
+    </SecondWindow>
+</SplitWindow>

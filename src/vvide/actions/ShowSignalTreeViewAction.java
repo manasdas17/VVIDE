@@ -20,6 +20,7 @@
 package vvide.actions;
 
 import vvide.ViewManager;
+import vvide.ui.views.SignalTreeView;
 
 /**
  * An Action to open/hide a signal tree view
@@ -41,7 +42,7 @@ public class ShowSignalTreeViewAction extends AbstractShowViewAction {
 	 * Constructor
 	 */
 	public ShowSignalTreeViewAction() {
-		super( "Signals", ViewManager.SIGNAL_TREE_VIEW_ID );
+		super( "Signals", SignalTreeView.SIGNAL_TREE_VIEW_ID );
 		putValue( SHORT_DESCRIPTION, "Open or hide the signal tree view" );
 	}
 }

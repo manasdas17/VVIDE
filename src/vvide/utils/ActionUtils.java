@@ -22,7 +22,6 @@ package vvide.utils;
 import java.io.IOException;
 
 import vvide.Application;
-import vvide.ViewManager;
 import vvide.logger.Logger;
 import vvide.project.AbstractSourceFile;
 import vvide.simulator.AbstractSimulator;
@@ -49,7 +48,7 @@ public class ActionUtils {
 		IOMethods.copyFileToTempFolder( sourceFile );
 		// Console view
 		ConsoleView console = (ConsoleView) Application.viewManager
-				.getView( ViewManager.CONSOLE_VIEW_ID );
+				.getView( ConsoleView.CONSOLE_VIEW_ID );
 
 		// Getting a Top-Level module in this file
 		try {
